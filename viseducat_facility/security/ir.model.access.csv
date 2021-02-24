@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_vm_facility,access.vm.facility,model_vm_facility,,1,1,1,1
+access_vm_facility_line,access.vm.facility.line,model_vm_facility_line,,1,1,1,1

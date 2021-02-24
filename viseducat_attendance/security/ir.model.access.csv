@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_vm_attendance_register,access.vm.attendance.register,model_vm_attendance_register,,1,1,1,1
+access_vm_attendance_line,access.vm.attendance.line,model_vm_attendance_line,,1,1,1,1
+access_vm_attendance_sheet,access.vm.attendance.sheet,model_vm_attendance_sheet,,1,1,1,1
+access_vm_attendance_type,access.vm.attendance.type,model_vm_attendance_type,,1,1,1,1

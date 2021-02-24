@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_vm_student,access.vm.student,model_vm_student,,1,1,1,1
+access_vm_batch,access.vm.batch,model_vm_batch,,1,1,1,1
+access_vm_course,access.vm.course,model_vm_course,,1,1,1,1
+access_vm_subject,access.vm.subject,model_vm_subject,,1,1,1,1
+access_vm_department,access.vm.department,model_vm_department,,1,1,1,1
+access_vm_faculty,access.vm.faculty,model_vm_faculty,,1,1,1,1
+access_vm_subject_registration,access.vm.subject.registration,model_vm_subject_registration,,1,1,1,1
+access_vm_category,access.vm.category,model_vm_category,,1,1,1,1
+access_vm_student_course,access.vm.student.course,model_vm_student_course,,1,1,1,1
+

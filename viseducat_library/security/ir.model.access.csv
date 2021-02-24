@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_vm_author,access.vm.author.course,model_vm_author,,1,1,1,1
+access_vm_tag,access.vm.tag,model_vm_tag,,1,1,1,1
+access_vm_media,access.vm.media,model_vm_media,,1,1,1,1
+access_vm_media_type,access.vm.media.type,model_vm_media_type,,1,1,1,1
+access_vm_publisher,access.vm.publisher,model_vm_publisher,,1,1,1,1
+access_vm_library_card,access.vm.library.card,model_vm_library_card,,1,1,1,1
+access_vm_library_card_type,access.vm.library.card.type,model_vm_library_card_type,,1,1,1,1
+access_vm_media_unit,access.vm.media.unit,model_vm_media_unit,,1,1,1,1
+access_vm_media_queue,access.vm.media.queue,model_vm_media_queue,,1,1,1,1
+access_vm_media_purchase,access.vm.media.purchase,model_vm_media_purchase,,1,1,1,1
+access_vm_media_movement,access.vm.media.movement,model_vm_media_movement,,1,1,1,1

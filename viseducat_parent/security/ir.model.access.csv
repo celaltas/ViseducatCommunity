@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_vm_parent,access.vm.parent,model_vm_parent,,1,1,1,1
+access_vm_parent_relationship,access.vm.parent.relationship,model_vm_parent_relationship,,1,1,1,1

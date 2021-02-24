@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_vm_fees_terms,access.vm.fees.terms,model_vm_fees_terms,,1,1,1,1
+access_vm_fees_terms_line,access.vm.fees.terms.line,model_vm_fees_terms_line,,1,1,1,1
+access_vm_fees_element,access.vm.fees.element,model_vm_fees_element,,1,1,1,1
+access_vm_student_fees_details,access.vm.student.fees.details,model_vm_student_fees_details,,1,1,1,1

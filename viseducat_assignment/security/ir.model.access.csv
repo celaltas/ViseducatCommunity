@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_vm_assignment,access.vm.assignment,model_vm_assignment,,1,1,1,1
+access_grading_assignment,access.grading.assignment,model_grading_assignment,,1,1,1,1
+access_vm_assignment_sub_line,access.vm.assignment.sub.line,model_vm_assignment_sub_line,,1,1,1,1
+access_grading_assignment_type,access.grading.assignment.type,model_grading_assignment_type,,1,1,1,1

@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_vm_session,access.vm.session,model_vm_session,,1,1,1,1
+access_vm_timing,access.vm.timing,model_vm_timing,,1,1,1,1
