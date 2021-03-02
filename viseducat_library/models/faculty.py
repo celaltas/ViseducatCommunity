@@ -1,7 +1,7 @@
 from odoo import models, fields
 
 
-class OpFaculty(models.Model):
+class VmFaculty(models.Model):
     _inherit = "vm.faculty"
 
     library_card_id = fields.Many2one('vm.library.card', 'Library Card')

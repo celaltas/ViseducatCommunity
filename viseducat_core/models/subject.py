@@ -1,7 +1,7 @@
 from odoo import models, fields, api, _
 
 
-class OpSubject(models.Model):
+class VmSubject(models.Model):
     _name = "vm.subject"
     _inherit = "mail.thread"
     _description = "Subject"

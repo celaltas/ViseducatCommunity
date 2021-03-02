@@ -1,4 +1,5 @@
 from datetime import datetime
+
 from dateutil.relativedelta import relativedelta
 from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError, UserError
@@ -163,7 +164,7 @@ class VmAdmission(models.Model):
         term_id = False
         if self.course_id and self.course_id.fees_term_id:
             term_id = self.course_id.fees_term_id.id
-            self.fees_term_id = term_id
+        self.fees_term_id = term_id
 
     @api.constrains('register_id', 'application_date')
     def _check_admission_register(self):
@@ -187,7 +188,7 @@ class VmAdmission(models.Model):
         self.state = 'submit'
 
     def admission_confirm(self):
-        print("admission_confirm metodu çağtıldı")
+        self.state = 'admission'
 
     def confirm_in_progress(self):
         for record in self:
@@ -201,8 +202,9 @@ class VmAdmission(models.Model):
                 'image_1920': self.image or False,
                 'is_student': True,
                 'company_id': self.env.ref('base.main_company').id,
-                'groups_id': [(6, 0, [self.env.ref('base.group_portal').id])]
-
+                'groups_id': [
+                    (6, 0,
+                     [self.env.ref('base.group_portal').id])]
             })
             details = {
                 'phone': student.phone,
@@ -235,13 +237,71 @@ class VmAdmission(models.Model):
                 'user_id': student_user.id,
                 'partner_id': student_user.partner_id.id,
             })
-            print('get_student_vals çağrıldı')
             return details
 
     def enroll_student(self):
-        print("enroll_student metodu çağtıldı")
         for record in self:
-            record.get_student_vals()
+            if record.register_id.max_count:
+                total_admission = self.env['vm.admission'].search_count(
+                    [('register_id', '=', record.register_id.id),
+                     ('state', '=', 'done')])
+                if not total_admission < record.register_id.max_count:
+                    msg = 'Max Admission In Admission Register :- (%s)' % (
+                        record.register_id.max_count)
+                    raise ValidationError(_(msg))
+            if not record.student_id:
+                vals = record.get_student_vals()
+                record.partner_id = vals.get('partner_id')
+                record.student_id = student_id = self.env[
+                    'vm.student'].create(vals).id
+            else:
+                student_id = record.student_id.id
+                record.student_id.write({
+                    'course_detail_ids': [[0, False, {
+                        'course_id':
+                            record.course_id and record.course_id.id or False,
+                        'batch_id':
+                            record.batch_id and record.batch_id.id or False,
+                    }]],
+                })
+            if record.fees_term_id:
+                val = []
+                product_id = record.register_id.product_id.id
+                for line in record.fees_term_id.line_ids:
+                    no_days = line.due_days
+                    per_amount = line.value
+                    amount = (per_amount * record.fees) / 100
+                    date = (datetime.today() + relativedelta(
+                        days=no_days)).date()
+                    dict_val = {
+                        'fees_line_id': line.id,
+                        'discount': self.discount or record.fees_term_id.discount,
+                        'amount': amount,
+                        'fees_factor': per_amount,
+                        'date': date,
+                        'product_id': product_id,
+                        'state': 'draft',
+                    }
+                    val.append([0, False, dict_val])
+                record.student_id.write({
+                    'fees_detail_ids': val
+                })
+            record.write({
+                'nbr': 1,
+                'state': 'done',
+                'admission_date': fields.Date.today(),
+                'student_id': student_id,
+                'is_student': True,
+            })
+            reg_id = self.env['vm.subject.registration'].create({
+                'student_id': student_id,
+                'batch_id': record.batch_id.id,
+                'course_id': record.course_id.id,
+                'min_unit_load': record.course_id.min_unit_load or 0.0,
+                'max_unit_load': record.course_id.max_unit_load or 0.0,
+                'state': 'draft',
+            })
+            reg_id.get_subjects()
 
     def confirm_rejected(self):
         self.state = 'reject'
@@ -253,15 +313,86 @@ class VmAdmission(models.Model):
         self.state = 'draft'
 
     def confirm_cancel(self):
-        print("confirm_cancel metodu çağtıldı")
+        self.state = 'cancel'
+        if self.is_student and self.student_id.fees_detail_ids:
+            self.student_id.fees_detail_ids.state = 'cancel'
 
     def payment_process(self):
-        print("payment_process metodu çağtıldı")
+        self.state = 'fees_paid'
 
     def open_student(self):
-
-        return print("open_student metodu çağtıldı")
+        form_view = self.env.ref('viseducat_core.view_vm_student_form')
+        tree_view = self.env.ref('viseducat_core.view_vm_student_tree')
+        value = {
+            'domain': str([('id', '=', self.student_id.id)]),
+            'view_type': 'form',
+            'view_mode': 'tree, form',
+            'res_model': 'vm.student',
+            'view_id': False,
+            'views': [(form_view and form_view.id or False, 'form'),
+                      (tree_view and tree_view.id or False, 'tree')],
+            'type': 'ir.actions.act_window',
+            'res_id': self.student_id.id,
+            'target': 'current',
+            'nodestroy': True
+        }
+        self.state = 'done'
+        return value
 
     def create_invoice(self):
+        """ Create invoice for fee payment process of student """
 
-        return print("create_invoice metodu çağtıldı")
+        partner_id = self.env['res.partner'].create({'name': self.name})
+        account_id = False
+        product = self.register_id.product_id
+        if product.id:
+            account_id = product.property_account_income_id.id
+        if not account_id:
+            account_id = product.categ_id.property_account_income_categ_id.id
+        if not account_id:
+            raise UserError(
+                _('There is no income account defined for this product: "%s". \
+                   You may have to install a chart of account from Accounting \
+                   app, settings menu.') % (product.name,))
+        if self.fees <= 0.00:
+            raise UserError(
+                _('The value of the deposit amount must be positive.'))
+        amount = self.fees
+        name = product.name
+        invoice = self.env['account.invoice'].create({
+            'name': self.name,
+            'origin': self.application_number,
+            'type': 'out_invoice',
+            'reference': False,
+            'account_id': partner_id.property_account_receivable_id.id,
+            'partner_id': partner_id.id,
+            'invoice_line_ids': [(0, 0, {
+                'name': name,
+                'origin': self.application_number,
+                'account_id': account_id,
+                'price_unit': amount,
+                'quantity': 1.0,
+                'discount': 0.0,
+                'uom_id': self.register_id.product_id.uom_id.id,
+                'product_id': product.id,
+            })],
+        })
+        invoice.compute_taxes()
+        form_view = self.env.ref('account.invoice_form')
+        tree_view = self.env.ref('account.invoice_tree')
+        value = {
+            'domain': str([('id', '=', invoice.id)]),
+            'view_type': 'form',
+            'view_mode': 'form',
+            'res_model': 'account.invoice',
+            'view_id': False,
+            'views': [(form_view and form_view.id or False, 'form'),
+                      (tree_view and tree_view.id or False, 'tree')],
+            'type': 'ir.actions.act_window',
+            'res_id': invoice.id,
+            'target': 'current',
+            'nodestroy': True
+        }
+        self.partner_id = partner_id
+        self.state = 'payment_process'
+        return value

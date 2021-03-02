@@ -30,6 +30,7 @@
         'report/report_admission_analysis.xml',
         'report/report_menu.xml',
         'menus/vm_menu.xml',
+        'wizard/admission_analysis_wizard_view.xml',
         'data/admission_sequence.xml',
     ],
     # only loaded in demonstration mode

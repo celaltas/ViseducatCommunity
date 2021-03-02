@@ -14,7 +14,6 @@ class VmFeesTermsLine(models.Model):
     fees_id = fields.Many2one('vm.fees.terms', 'Fees')
 
 
-
 class VmFeesTerms(models.Model):
     _name = "vm.fees.terms"
     _inherit = "mail.thread"
@@ -29,6 +28,8 @@ class VmFeesTerms(models.Model):
     day_type = fields.Selection([('before', 'Before'), ('after', 'After')],
                                 'Type')
     line_ids = fields.One2many('vm.fees.terms.line', 'fees_id', 'Terms')
+    discount = fields.Float(string='Discount (%)',
+                            digits='Discount', default=0.0)
 
     @api.model
     def create(self, vals):

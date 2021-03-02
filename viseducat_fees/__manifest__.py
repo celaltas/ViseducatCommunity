@@ -24,13 +24,15 @@
 
     # always loaded
     'data': [
+        #'security/op_security.xml',
         'security/ir.model.access.csv',
-        # 'security/vm_security.xml',
-        'menu/vm_menu.xml',
+        'report/report_menu.xml',
+        'report/fees_analysis_report_view.xml',
+        'wizard/fees_detail_report_wizard_view.xml',
         'views/fees_terms_view.xml',
-        'views/course_view.xml',
         'views/student_view.xml',
-
+        'views/course_view.xml',
+        'menu/vm_menu.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
