@@ -10,18 +10,20 @@ class VmResultLine(models.Model):
     marksheet_line_id = fields.Many2one(
         'vm.marksheet.line', 'Marksheet Line', ondelete='cascade')
     exam_id = fields.Many2one('vm.exam', 'Exam', required=True)
-    # evaluation_type = fields.Selection(
-    #     related='exam_id.session_id.evaluation_type', store=True)
+    evaluation_type = fields.Selection(
+        related='exam_id.session_id.evaluation_type', store=True)
     marks = fields.Integer('Marks', required=True)
     grade = fields.Char('Grade', readonly=True, compute='_compute_grade')
     student_id = fields.Many2one('vm.student', 'Student', required=True)
     status = fields.Selection([('pass', 'Pass'), ('fail', 'Fail')], 'Status',
                               compute='_compute_status', store=True)
 
+
     @api.constrains('marks', 'marks')
     def _check_marks(self):
         if (self.marks < 0.0):
             raise ValidationError(_("Enter proper Marks or Percentage!"))
+
 
     @api.depends('marks')
     def _compute_grade(self):
@@ -52,3 +54,6 @@ class VmResultLine(models.Model):
         for res in self:
             super(VmResultLine, res).unlink()
         return self
+
+
+

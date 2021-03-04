@@ -71,7 +71,7 @@
         />
         <!--                  groups="viseducat_core.group_vm_back_office,viseducat_core.group_vm_back_office_admin,viseducat_core.group_vm_faculty"-->
 
-                <menuitem id="menu_vm_exam_general"
+        <menuitem id="menu_vm_exam_general"
                   name="General"
                   parent="menu_vm_exam_root"
                   sequence="20"/>
@@ -82,7 +82,7 @@
                   sequence="30"
                   action="student_hall_ticket_act"
         />
-<!--                          groups="viseducat_core.group_vm_back_office,viseducat_core.group_vm_back_office_admin,viseducat_core.group_vm_faculty"-->
+        <!--                          groups="viseducat_core.group_vm_back_office,viseducat_core.group_vm_back_office_admin,viseducat_core.group_vm_faculty"-->
 
         <menuitem id="menu_exam_configuration"
                   parent="menu_vm_exam_root"

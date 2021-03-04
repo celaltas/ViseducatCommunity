@@ -24,7 +24,8 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <form string="Marksheet Register">
-                    <header groups="viseducat_core.group_vm_back_office_admin,viseducat_core.group_vm_back_office">
+<!--                    groups="viseducat_core.group_vm_back_office_admin,viseducat_core.group_vm_back_office"-->
+                    <header >
                         <button name="action_validate" states="draft" string="Validate Marksheet" type="object"
                                 class="oe_highlight"/>
                         <button name="act_draft" states="cancelled" string="Set to Draft" type="object"/>

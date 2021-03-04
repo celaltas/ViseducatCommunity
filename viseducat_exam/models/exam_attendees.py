@@ -1,4 +1,3 @@
-
 from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 
@@ -36,3 +35,14 @@ class VmExamAttendees(models.Model):
     def _check_marks(self):
         if self.marks < 0.0:
             raise ValidationError(_("Enter proper marks!"))
+
+    @api.onchange('marks')
+    def onchange_marks(self):
+        if self.status == "absent" and self.marks > 0:
+            raise ValidationError(_("The mark must be zero when there is no student!"))
+
+    @api.constrains('status')
+    def _check_marks(self):
+        if self.status == "absent":
+            self.marks = 0.0
+

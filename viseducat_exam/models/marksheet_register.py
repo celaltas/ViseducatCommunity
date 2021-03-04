@@ -69,3 +69,4 @@ class VmMarksheetRegister(models.Model):
 
     def act_draft(self):
         self.state = 'draft'
+

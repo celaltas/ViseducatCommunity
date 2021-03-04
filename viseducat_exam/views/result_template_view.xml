@@ -20,7 +20,8 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <form string="Result Template">
-                    <header groups="viseducat_core.group_vm_back_office_admin,viseducat_core.group_vm_back_office">
+<!--                    groups="viseducat_core.group_vm_back_office_admin,viseducat_core.group_vm_back_office"-->
+                    <header >
                         <button string="Generate Result" type="object" states="draft" name="generate_result"
                                 class="oe_highlight"/>
                         <field name="state" widget="statusbar" statusbar_visible="draft,result_generated"/>

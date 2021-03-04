@@ -4,14 +4,13 @@ from odoo.exceptions import ValidationError
 
 class VmMarksheetLine(models.Model):
     _name = "vm.marksheet.line"
-    # _rec_name = "student_id"
+    _rec_name = "student_id"
     _description = "Marksheet Line"
 
     marksheet_reg_id = fields.Many2one(
         'vm.marksheet.register', 'Marksheet Register')
-    evaluation_type = fields.Selection(
-        related='marksheet_reg_id.exam_session_id.evaluation_type',
-        store=True)
+    evaluation_type = fields.Selection(related='marksheet_reg_id.exam_session_id.evaluation_type',
+                                       store=True)
     student_id = fields.Many2one('vm.student', 'Student', required=True)
     result_line = fields.One2many(
         'vm.result.line', 'marksheet_line_id', 'Results')
