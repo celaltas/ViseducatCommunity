@@ -21,7 +21,7 @@
         'views/fees_terms_view.xml',
         'views/student_view.xml',
         'views/course_view.xml',
-        'menus/vm_menu.xml',
+        'menu/vm_menu.xml',
     ],
     'images': [
         'static/description/viseducat_fees_banner.jpg',

@@ -23,14 +23,14 @@
         'report/report_menu.xml',
         'wizard/generate_timetable_view.xml',
         'wizard/time_table_report.xml',
-        'wizard/session_confirmation.xml',
+        #'wizard/session_confirmation.xml',
         'views/timetable_templates.xml',
         'menus/vm_menu.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
-        # 'demo/timing_demo.xml',
-        # 'demo/vm_timetable_demo.xml'
+        'demo/timing_demo.xml',
+        'demo/vm_timetable_demo.xml'
     ],
     'images': [
         'static/description/viseducat_timetable_banner.jpg',
