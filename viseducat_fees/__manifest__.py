@@ -1,30 +1,19 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "viseducat_fees",
-
-    'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
-
-    'description': """
-        Long description of module's purpose
-    """,
-
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
-
-    # Categories can be used to filter modules in modules listing
-    # Check https://github.com/odoo/odoo/blob/13.0/odoo/addons/base/data/ir_module_category_data.xml
-    # for the full list
-    'category': 'Uncategorized',
-    'version': '0.1',
+    'name': "VisEduCat Fees",
+    'author': "VisMarin Bilisim",
+    'website': "https://www.vismarin.com/en/",
+    'category': 'Education',
+    'summary': 'Manage Fees',
+    'license': 'LGPL-3',
+    'version': '13.0',
 
     # any module necessary for this one to work correctly
     'depends': ['base', 'viseducat_core', 'account'],
 
     # always loaded
     'data': [
-        #'security/op_security.xml',
+        # 'security/vm_security.xml',
         'security/ir.model.access.csv',
         'report/report_menu.xml',
         'report/fees_analysis_report_view.xml',
@@ -32,10 +21,18 @@
         'views/fees_terms_view.xml',
         'views/student_view.xml',
         'views/course_view.xml',
-        'menu/vm_menu.xml',
+        'menus/vm_menu.xml',
     ],
-    # only loaded in demonstration mode
+    'images': [
+        'static/description/viseducat_fees_banner.jpg',
+    ],
     'demo': [
-        'demo/demo.xml',
+        'demo/product_category_demo.xml',
+        'demo/product_demo.xml',
+        'demo/fees_element_line_demo.xml',
+        'demo/fees_terms_line_demo.xml',
+        'demo/fees_terms_demo.xml',
+        'demo/course_demo.xml',
+        'demo/student_fees_details_demo.xml',
     ],
 }

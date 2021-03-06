@@ -1,29 +1,20 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "viseducat_exam",
-
-    'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
-
-    'description': """
-        Long description of module's purpose
-    """,
-
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
-
-    # Categories can be used to filter modules in modules listing
-    # Check https://github.com/odoo/odoo/blob/13.0/odoo/addons/base/data/ir_module_category_data.xml
-    # for the full list
-    'category': 'Uncategorized',
-    'version': '0.1',
+    'name': "VisEduCat Exam",
+    'author': "VisMarin Bilisim",
+    'website': "https://www.vismarin.com/en/",
+    'category': 'Education',
+    'summary': 'Manage Exam',
+    'license': 'LGPL-3',
+    'version': '13.0',
 
     # any module necessary for this one to work correctly
     'depends': ['viseducat_classroom'],
 
     # always loaded
     'data': [
+
+
         'security/vm_security.xml',
         'security/ir.model.access.csv',
         'views/res_partner_view.xml',
@@ -47,17 +38,20 @@
     ],
     # only loaded in demonstration mode
     'demo': [
-        # 'demo/exam_room_demo.xml',
-        # 'demo/exam_type_demo.xml',
-        # 'demo/exam_session_demo.xml',
-        # 'demo/exam_demo.xml',
-        # 'demo/exam_attendees_demo.xml',
-        # 'demo/grade_configuration_demo.xml',
-        # 'demo/result_template_demo.xml',
-        # 'demo/marksheet_register_demo.xml',
-        # 'demo/marksheet_line_demo.xml',
-        # 'demo/result_line_demo.xml',
+        'demo/exam_room_demo.xml',
+        'demo/exam_type_demo.xml',
+        'demo/exam_session_demo.xml',
+        'demo/exam_demo.xml',
+        'demo/exam_attendees_demo.xml',
+        'demo/grade_configuration_demo.xml',
+        'demo/result_template_demo.xml',
+        'demo/marksheet_register_demo.xml',
+        'demo/marksheet_line_demo.xml',
+        'demo/result_line_demo.xml',
 
+    ],
+    'images': [
+        'static/description/viseducat_exam_banner.jpg',
     ],
     'installable': True,
     'auto_install': False,

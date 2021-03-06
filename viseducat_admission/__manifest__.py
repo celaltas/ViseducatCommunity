@@ -1,23 +1,12 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "viseducat_admission",
-
-    'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
-
-    'description': """
-        Long description of module's purpose
-    """,
-
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
-
-    # Categories can be used to filter modules in modules listing
-    # Check https://github.com/odoo/odoo/blob/13.0/odoo/addons/base/data/ir_module_category_data.xml
-    # for the full list
-    'category': 'Uncategorized',
-    'version': '0.1',
+    'name': "VisEduCat Admission",
+    'author': "VisMarin Bilisim",
+    'website': "https://www.vismarin.com/en/",
+    'category': 'Education',
+    'summary': 'Manage Admissions',
+    'license': 'LGPL-3',
+    'version': '13.0',
 
     # any module necessary for this one to work correctly
     'depends': ['base', 'mail', 'viseducat_core', 'viseducat_fees'],
@@ -25,17 +14,22 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/admission_view.xml',
+        'data/admission_sequence.xml',
         'views/admission_register_view.xml',
+        'views/admission_view.xml',
         'report/report_admission_analysis.xml',
         'report/report_menu.xml',
-        'menus/vm_menu.xml',
         'wizard/admission_analysis_wizard_view.xml',
-        'data/admission_sequence.xml',
+        'menus/vm_menu.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
-        'demo/demo.xml',
+        'demo/admission_register_demo.xml',
+        'demo/admission_demo.xml',
+    ],
+    'test': [],
+    'images': [
+        'static/description/viseducat_admission_banner.jpg',
     ],
     'installable': True,
     'auto_install': False,
