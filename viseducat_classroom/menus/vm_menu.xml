@@ -11,7 +11,7 @@
                   sequence="10"
                   parent="menu_vm_school_config_class_room"
                   action="act_open_vm_classroom_view"
+                  groups="viseducat_core.group_vm_back_office,viseducat_core.group_vm_back_office_admin"
                   />
-<!--        groups="viseducat_core.group_vm_back_office,viseducat_core.group_vm_back_office_admin"-->
     </data>
 </odoo>

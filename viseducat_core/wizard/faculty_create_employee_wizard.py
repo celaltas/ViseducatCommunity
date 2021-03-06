@@ -8,9 +8,11 @@ class WizardOpFacultyEmployee(models.TransientModel):
     user_boolean = fields.Boolean("Want to create user too ?", default=True)
 
     def create_employee(self):
-       for rec in self:
-           active_id = self.env.context.get('active_ids', []) or []
-           faculty = self.env['vm.faculty'].browse(active_id)
-           faculty.create_employee()
-
-           #grup işlemleri var geri dön
+        for record in self:
+            active_id = self.env.context.get('active_ids', []) or []
+            faculty = self.env['vm.faculty'].browse(active_id)
+            faculty.create_employee()
+            if record.user_boolean and not faculty.user_id:
+                user_group = self.env.ref('viseducat_core.group_vm_faculty')
+                self.env['res.users'].create_user(faculty, user_group)
+                faculty.emp_id.user_id = faculty.user_id

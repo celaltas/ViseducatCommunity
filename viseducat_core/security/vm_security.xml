@@ -37,7 +37,7 @@
         </record>
 
         <record model="ir.rule" id="student_login_rule">
-            <field name="name">Student Login rule</field>
+            <field name="name">Student Login Rule</field>
             <field name="model_id" ref="model_vm_student"/>
             <field name="groups"
                    eval="[(4, ref('viseducat_core.group_vm_back_office_admin'))]"/>
@@ -45,7 +45,7 @@
         </record>
 
         <record model="ir.rule" id="faculty_login_rule">
-            <field name="name">Faculty Login rule</field>
+            <field name="name">Faculty Login Rule</field>
             <field name="model_id" ref="model_vm_faculty"/>
             <field name="groups"
                    eval="[(4, ref('viseducat_core.group_vm_faculty'))]"/>
@@ -60,23 +60,23 @@
             <field name="domain_force">[(1,'=',1)]</field>
         </record>
 
-<!--        <record model="ir.rule" id="student_subject_registration_rule">-->
-<!--            <field name="name">Student Subject Registration Rule</field>-->
-<!--            <field name="model_id" ref="model_op_subject_registration"/>-->
-<!--            <field name="groups"-->
-<!--                   eval="[(4, ref('openeducat_core.group_op_back_office_admin'))]"/>-->
-<!--            <field name="domain_force">['|', ('student_id.user_id','=',user.id), ('student_id.user_id','in',-->
-<!--                user.child_ids.ids)]-->
-<!--            </field>-->
-<!--        </record>-->
+        <record model="ir.rule" id="student_subject_registration_rule">
+            <field name="name">Student Subject Registration Rule</field>
+            <field name="model_id" ref="model_vm_subject_registration"/>
+            <field name="groups"
+                   eval="[(4, ref('viseducat_core.group_vm_back_office_admin'))]"/>
+            <field name="domain_force">['|', ('student_id.user_id','=',user.id), ('student_id.user_id','in',
+                user.child_ids.ids)]
+            </field>
+        </record>
 
-<!--        <record model="ir.rule" id="view_all_subject_registration_rule">-->
-<!--            <field name="name">View Students Registration</field>-->
-<!--            <field name="model_id" ref="model_op_subject_registration"/>-->
-<!--            <field name="groups"-->
-<!--                   eval="[(4, ref('openeducat_core.group_op_faculty'))]"/>-->
-<!--            <field name="domain_force">[(1,'=',1)]</field>-->
-<!--        </record>-->
+        <record model="ir.rule" id="view_all_subject_registration_rule">
+            <field name="name">View Students Registration</field>
+            <field name="model_id" ref="model_vm_subject_registration"/>
+            <field name="groups"
+                   eval="[(4, ref('viseducat_core.group_vm_faculty'))]"/>
+            <field name="domain_force">[(1,'=',1)]</field>
+        </record>
 
     </data>
 </odoo>

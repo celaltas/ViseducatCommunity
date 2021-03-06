@@ -8,6 +8,7 @@
     'license': 'LGPL-3',
     'version': '13.0',
 
+
     # any module necessary for this one to work correctly
     'depends': ['base', 'board', 'hr', 'web', 'website'],
 
@@ -30,15 +31,16 @@
         'views/batch_view.xml',
         'views/subject_view.xml',
         'views/faculty_view.xml',
-        'views/website_assets.xml',
+        #'views/website_assets.xml',
         'views/subject_registration_view.xml',
-        'views/res_config_setting_view.xml',
+        #'views/res_config_setting_view.xml',
         'views/student_portal_view.xml',
         'views/student_course_view.xml',
-        'data/ir_cron_data.xml',
+        #'data/ir_cron_data.xml',
         'menu/viseducat_core_menu.xml',
         'menu/faculty_menu.xml',
         'menu/student_menu.xml',
+
 
     ],
     # only loaded in demonstration mode

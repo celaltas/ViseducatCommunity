@@ -61,7 +61,8 @@
                                 </group>
                             </page>
                             <page name="movements" string="Movements"
-                            >   <!--  groups="openeducat_core.group_op_back_office,openeducat_library.group_op_library,openeducat_core.group_op_back_office_admin"-->
+                                  groups="viseducat_core.group_vm_back_office,viseducat_library.group_vm_library,viseducat_core.group_vm_back_office_admin"
+                            >
                                 <field name="movement_line" colspan="4" nolabel="1"/>
                             </page>
                             <page name="media_queue_requests" string="Media Queue Requests">
@@ -74,15 +75,18 @@
                                         <button name="do_accept" string="Accept" type="object"
                                                 states="request" icon="fa-thumbs-up"
                                                 style="font-size: 15px;"
-                                                />  <!--groups="openeducat_library.group_op_library"-->
+                                                groups="viseducat_library.group_vm_library"
+                                                />
                                         <button name="do_reject" string="Reject" type="object"
                                                 states="request,accept" icon="fa-thumbs-down"
                                                 style="font-size: 15px;"
-                                                />  <!--groups="openeducat_library.group_op_library"-->
+                                                groups="viseducat_library.group_vm_library"
+                                                />
                                         <button name="do_request_again" string="Request Again"
                                                 states="reject" type="object" icon="fa-undo"
                                                 style="font-size: 15px;"
-                                                />  <!--groups="openeducat_library.group_op_library"-->
+                                                groups="viseducat_library.group_vm_library"
+                                                />
                                     </tree>
                                 </field>
                             </page>

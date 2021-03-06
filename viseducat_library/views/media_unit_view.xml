@@ -22,18 +22,19 @@
             <field name="arch" type="xml">
                 <form string="Media Units">
                     <header groups="base.group_user">
-                       <button name="%(issue_media_act)d" string="Issue Media"
+                        <button name="%(issue_media_act)d" string="Issue Media"
                                 type="action"
                                 context="{'default_media_id': media_id, 'default_media_unit_id': active_id}"
                                 attrs="{'invisible':[('state','!=','available')]}"
-                                class="oe_highlight" />
-<!--                        groups="openeducat_library.group_op_library"-->
+                                class="oe_highlight"
+                                groups="viseducat_library.group_vm_library"/>
+
                         <button name="%(return_media_act)d" string="Return Media"
                                 type="action"
                                 context="{'default_media_id': media_id, 'default_media_unit_id': active_id}"
                                 attrs="{'invisible':[('state','!=','issue')]}"
-                                class="oe_highlight" />
-<!--                        groups="openeducat_library.group_op_library"-->
+                                class="oe_highlight"
+                                groups="viseducat_library.group_vm_library"/>
                         <field name="state" widget="statusbar" statusbar_visible="available,issue,reserve,lost"
                                statusbar_colors='{"r":"red"}'/>
                     </header>

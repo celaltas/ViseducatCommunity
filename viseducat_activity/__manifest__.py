@@ -11,7 +11,8 @@
 
     # always loaded
     'data': [
-        # 'security/op_security.xml',
+
+        'security/vm_security.xml',
         'security/ir.model.access.csv',
         'data/activity_type_data.xml',
         'wizard/student_migrate_wizard_view.xml',
@@ -19,6 +20,8 @@
         'views/activity_type_view.xml',
         'views/student_view.xml',
         'menus/vm_menu.xml'
+
+
     ],
     # only loaded in demonstration mode
     'demo': [

@@ -13,7 +13,7 @@
 
     # always loaded
     'data': [
-        # 'security/vm_security.xml',
+        'security/vm_security.xml',
         'security/ir.model.access.csv',
         'data/attendance_sheet_sequence.xml',
         'wizards/attendance_import_view.xml',

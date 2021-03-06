@@ -27,23 +27,23 @@
                     <header>
                         <button type="object" name="lecture_confirm"
                                 states="draft" string="Confirm"
-                                class="oe_highlight"/>
-<!--                        groups="viseducat_core.group_vm_faculty"-->
+                                class="oe_highlight"
+                                groups="viseducat_core.group_vm_faculty"/>
 
                         <button type="object" name="lecture_done"
                                 states="confirm" string="Done"
-                                class="oe_highlight"/>
-<!--                        groups="viseducat_core.group_vm_faculty"-->
+                                class="oe_highlight"
+                                groups="viseducat_core.group_vm_faculty"/>
 
                         <button type="object" name="lecture_draft"
                                 states="cancel" string="Set to Draft"
-                                class="oe_highlight"/>
-<!--                        groups="viseducat_core.group_vm_faculty"-->
+                                class="oe_highlight"
+                                groups="viseducat_core.group_vm_faculty"/>
 
                         <button type="object" name="lecture_cancel"
                                 states="draft,confirm" string="Cancel"
-                               />
-<!--                         groups="viseducat_core.group_vm_faculty"-->
+                                groups="viseducat_core.group_vm_faculty"
+                        />
 
                         <field name="state" widget="statusbar"
                                statusbar_visible="draft,confirm"/>

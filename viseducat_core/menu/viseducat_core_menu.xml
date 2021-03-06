@@ -6,9 +6,8 @@
                   name="VisEduCat"
                   sequence="10"
                   web_icon="viseducat_core,static/description/icon.png"
+                  groups="group_vm_back_office,group_vm_back_office_admin"
         />
-        <!--                  groups="group_vm_back_office,group_vm_back_office_admin"-->
-
 
 
         <menuitem id="menu_vm_school_main"
@@ -16,9 +15,8 @@
                   parent="menu_vm_school_root"
                   sequence="10"
                   action="act_open_vm_student_view"
+                  groups="group_vm_faculty"
         />
-        <!--                  groups="group_vm_faculty"-->
-
 
 
         <menuitem id="menu_vm_faculty_main"
@@ -26,9 +24,8 @@
                   parent="menu_vm_school_root"
                   sequence="20"
                   action="act_open_vm_faculty_view"
+                  groups="viseducat_core.group_vm_faculty"
         />
-        <!--                  groups="viseducat_core.group_vm_faculty"-->
-
 
 
         <menuitem id="menu_vm_general_main"
@@ -52,9 +49,8 @@
                   parent="menu_vm_school_config_course"
                   sequence="10"
                   action="act_open_vm_course_view"
+                  groups="group_vm_back_office,group_vm_back_office_admin"
         />
-        <!--                  groups="group_vm_back_office,group_vm_back_office_admin"-->
-
 
 
         <menuitem id="menu_vm_batch_sub"
@@ -62,9 +58,8 @@
                   parent="menu_vm_school_config_course"
                   sequence="20"
                   action="act_open_vm_batch_view"
+                  groups="group_vm_back_office,group_vm_back_office_admin"
         />
-        <!--                  groups="group_vm_back_office,group_vm_back_office_admin"-->
-
 
 
         <menuitem id="menu_vm_department_sub"
@@ -72,10 +67,9 @@
                   parent="menu_vm_school_config_course"
                   sequence="20"
                   action="act_open_vm_department_view"
+                  groups="group_vm_back_office,group_vm_back_office_admin"
 
         />
-        <!--                  groups="group_vm_back_office,group_vm_back_office_admin"-->
-
 
 
         <menuitem id="menu_vm_school_config_subject"
@@ -88,8 +82,8 @@
                   sequence="10"
                   parent="menu_vm_school_config_subject"
                   action="act_open_vm_subject_view"
+                  groups="group_vm_back_office,group_vm_back_office_admin,viseducat_core.group_vm_faculty"
         />
-        <!--                  groups="group_vm_back_office,group_vm_back_office_admin,viseducat_core.group_vm_faculty"-->
 
 
         <menuitem id="menu_vm_school_config_general"
@@ -102,9 +96,9 @@
                   parent="menu_vm_school_config_general"
                   sequence="40"
                   action="act_open_vm_category_view"
+                  groups="viseducat_core.group_vm_back_office"
 
         />
-        <!--                  groups="viseducat_core.group_vm_back_office"-->
 
 
         <!-- Activity Root -->
@@ -113,11 +107,11 @@
                   parent="menu_vm_school_config"
                   sequence="40"/>
 
-                <!-- Report Root -->
-                <menuitem id="menu_vm_report_main"
-                          name="Reports"
-                          parent="menu_vm_school_root"
-                          sequence="40"/>
+        <!-- Report Root -->
+        <menuitem id="menu_vm_report_main"
+                  name="Reports"
+                  parent="menu_vm_school_root"
+                  sequence="40"/>
 
         <!--        &lt;!&ndash; Setting Root &ndash;&gt;-->
         <!--        <menuitem id="menu_viseducat_config"-->
