@@ -1,11 +1,11 @@
 {
-    'name': 'Web VisEduCat',
-    'category': 'Website',
-    "sequence": 3,
-    'version': '13.0',
+    'name': "Web VisEduCat",
+    'author': "VisMarin Bilisim",
+    'website': "https://www.vismarin.com/en/",
+    'summary': 'Manage Timetable',
     'license': 'LGPL-3',
-    'author': 'Tech Receptives',
-    'website': 'http://www.openeducat.org',
+    'version': '13.0',
+
     'data': [
         'views/assets.xml',
         'views/snippets/slider.xml',

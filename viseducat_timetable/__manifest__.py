@@ -1,44 +1,40 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "viseducat_timetable",
-
-    'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
-
-    'description': """
-        Long description of module's purpose
-    """,
-
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
-
-    # Categories can be used to filter modules in modules listing
-    # Check https://github.com/odoo/odoo/blob/13.0/odoo/addons/base/data/ir_module_category_data.xml
-    # for the full list
-    'category': 'Uncategorized',
-    'version': '0.1',
+    'name': "VisEduCat Timetable",
+    'author': "VisMarin Bilisim",
+    'website': "https://www.vismarin.com/en/",
+    'category': 'Education',
+    'summary': 'Manage Timetable',
+    'license': 'LGPL-3',
+    'version': '13.0',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'mail','viseducat_classroom'],
+    'depends': ['base', 'mail', 'viseducat_classroom'],
 
     # always loaded
     'data': [
+        'security/vm_security.xml',
         'security/ir.model.access.csv',
         'views/timetable_view.xml',
-        'views/timetable_templates.xml',
         'views/timing_view.xml',
         'views/faculty_view.xml',
-        'menus/vm_menu.xml',
-        'wizard/generate_timetable_view.xml',
-        'wizard/time_table_report.xml',
-        'report/report_menu.xml',
         'report/report_timetable_student_generate.xml',
         'report/report_timetable_teacher_generate.xml',
-
+        'report/report_menu.xml',
+        'wizard/generate_timetable_view.xml',
+        'wizard/time_table_report.xml',
+        'wizard/session_confirmation.xml',
+        'views/timetable_templates.xml',
+        'menus/vm_menu.xml',
     ],
     # only loaded in demonstration mode
-    'demo': [],
+    'demo': [
+        # 'demo/timing_demo.xml',
+        # 'demo/vm_timetable_demo.xml'
+    ],
+    'images': [
+        'static/description/viseducat_timetable_banner.jpg',
+    ],
     'installable': True,
     'auto_install': False,
     'application': True,
