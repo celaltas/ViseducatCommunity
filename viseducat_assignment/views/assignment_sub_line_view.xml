@@ -26,26 +26,26 @@
                                 string="Submit" class="oe_highlight"/>
                         <button name="act_accept" states="submit" type="object"
                                 string="Accept" class="oe_highlight"
+                                groups="viseducat_core.group_vm_faculty"
                         />
-<!--                        groups="viseducat_core.group_vm_faculty" -->
                         <button name="act_change_req" states="submit" type="object"
                                 string="Change Require"
+                                groups="viseducat_core.group_vm_faculty"
                         />
-<!--                        groups="viseducat_core.group_vm_faculty"-->
                         <button name="act_reject" states="submit" type="object"
                                 string="Reject"
+                                groups="viseducat_core.group_vm_faculty"
                         />
-<!--                        groups="viseducat_core.group_vm_faculty"-->
                         <button name="act_draft" states="change" type="object"
                                 string="Change And Resubmit"
                                 class="oe_highlight"
+                                groups="viseducat_core.group_vm_back_office_admin"
                         />
-<!--                        groups="viseducat_core.group_vm_back_office_admin"-->
                         <button name="act_draft" states="reject" type="object"
                                 string="Resubmit"
                                 class="oe_highlight"
+                                groups="viseducat_core.group_vm_back_office_admin"
                         />
-<!--                        groups="viseducat_core.group_vm_back_office_admin"-->
                         <field name="state" widget="statusbar" statusbar_visible="draft,submit,accept"/>
                     </header>
                     <sheet>
@@ -147,7 +147,6 @@
             <field name="view_mode">tree,form,pivot,graph</field>
             <field name="search_view_id" ref="view_vm_assignment_sub_line_search"/>
         </record>
-
 
 
     </data>

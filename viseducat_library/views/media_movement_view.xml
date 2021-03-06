@@ -36,8 +36,9 @@
                                 type="object"
                                 class="oe_highlight"
                                 attrs="{'invisible':[('state','not in',('available','reserve'))]}"
+                                groups="viseducat_library.group_vm_library"
 
-                        />   <!--  groups="openeducat_library.group_op_library"-->
+                        />
 
                         <button name="%(return_media_act)d"
                                 string="Return Media"
@@ -45,8 +46,9 @@
                                 class="oe_highlight"
                                 attrs="{'invisible':[('state','!=','issue')]}"
                                 context = "{'default_media_id':media_id, 'default_media_unit_id':media_unit_id}"
+                                groups="viseducat_library.group_vm_library"
 
-                        />  <!--groups="openeducat_library.group_op_library"-->
+                        />
 
                         <field name="state" widget="statusbar" statusbar_visible="available,issue"/>
                     </header>

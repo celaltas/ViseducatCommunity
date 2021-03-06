@@ -63,9 +63,9 @@
                     <field name="name"/>
                     <field name="blood_group"/>
                     <field name="emergency_contact"/>
-                    <field name="main_department_id"/>         <!--groups="viseducat_core.group_multi_department"-->
+                    <field name="main_department_id" groups="viseducat_core.group_multi_department"/>
                     <field name="allowed_department_ids"
-                           widget="many2many_tags"/>  <!--groups="viseducat_core.group_multi_department"-->
+                           widget="many2many_tags" groups="viseducat_core.group_multi_department"/>
                 </tree>
             </field>
         </record>
@@ -77,7 +77,7 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <form string="Faculty">
-                    <header>    <!--groups="viseducat_core.group_vm_back_office_admin"-->
+                    <header groups="viseducat_core.group_vm_back_office_admin">
                         <button name="%(faculty_create_employee_act)d" string="Create Employee" type="action"
                                 class="oe_highlight" attrs="{'invisible': [('emp_id', '!=', False)]}"/>
                     </header>
@@ -127,9 +127,9 @@
                                     <field name="emergency_contact" context="{'show_address': 1}"
                                            options='{"always_reload": True}'/>
                                     <field name='emp_id'/>
-                                    <field name="main_department_id"/>     <!--groups="viseducat_core.group_multi_department"-->
+                                    <field name="main_department_id" groups="viseducat_core.group_multi_department"/>
                                     <field name="allowed_department_ids"
-                                           widget="many2many_tags"/>    <!--groups="viseducat_core.group_multi_department"-->
+                                           widget="many2many_tags" groups="viseducat_core.group_multi_department"/>
                                 </group>
                                 <group string="Address Detail" name="address">
                                     <label for="type"/>

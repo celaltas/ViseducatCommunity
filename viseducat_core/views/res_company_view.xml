@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-<!--        <record model="res.groups" id="group_multi_department">-->
-<!--            <field name="name">Multi Departments</field>-->
-<!--            <field name="category_id" ref="base.module_category_usability"/>-->
-<!--        </record>-->
+        <record model="res.groups" id="group_multi_department">
+            <field name="name">Multi Departments</field>
+            <field name="category_id" ref="base.module_category_usability"/>
+        </record>
         <record id="view_company_form_viseducat_core" model="ir.ui.view">
             <field name="name">res.company.form.viseducat.core</field>
             <field name="model">res.company</field>

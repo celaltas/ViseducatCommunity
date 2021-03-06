@@ -5,8 +5,8 @@
                   name=" Attendances"
                   sequence="-2"
                   web_icon="viseducat_attendance,static/description/icon.png"
+                  groups="viseducat_core.group_vm_back_office,viseducat_core.group_vm_faculty,viseducat_core.group_vm_back_office_admin"
         />
-        <!--                          groups="viseducat_core.group_vm_back_office,viseducat_core.group_vm_faculty,viseducat_core.group_vm_back_office_admin"-->
 
 
         <menuitem id="menu_vm_attendance"
@@ -19,24 +19,24 @@
                   parent="menu_vm_attendance"
                   sequence="10"
                   action="act_vis_vm_attendance_register_view"
+                  groups="viseducat_core.group_vm_back_office,viseducat_core.group_vm_faculty,viseducat_core.group_vm_back_office_admin"
         />
-        <!--                  groups="viseducat_core.group_vm_back_office,viseducat_core.group_vm_faculty,viseducat_core.group_vm_back_office_admin"-->
 
         <menuitem id="menu_vm_attendance_line_sub"
                   name="Attendance lines"
                   parent="menu_vm_attendance"
                   sequence="30"
                   action="act_vis_vm_attendance_line_view"
+                  groups="viseducat_core.group_vm_back_office_admin,viseducat_core.group_vm_back_office,viseducat_core.group_vm_faculty,viseducat_core.group_vm_back_office_admin"
         />
-        <!--                          groups="viseducat_core.group_vm_back_office_admin,viseducat_core.group_vm_back_office,viseducat_core.group_vm_faculty,viseducat_core.group_vm_back_office_admin"-->
 
         <menuitem id="menu_vm_attendance_sheet_sub"
                   name="Sheets"
                   parent="menu_vm_attendance"
                   sequence="20"
                   action="act_vis_vm_attendance_sheet_view"
+                  groups="viseducat_core.group_vm_back_office,viseducat_core.group_vm_faculty,viseducat_core.group_vm_back_office_admin"
         />
-        <!--                  groups="viseducat_core.group_vm_back_office,viseducat_core.group_vm_faculty,viseducat_core.group_vm_back_office_admin"-->
 
 
         <menuitem id="menu_vm_attendance_config"
@@ -50,8 +50,8 @@
                   parent="menu_vm_attendance_config"
                   sequence="30"
                   action="act_vis_vm_attendance_type_view"
+                  groups="viseducat_core.group_vm_back_office_admin,viseducat_core.group_vm_back_office,viseducat_core.group_vm_faculty"
         />
-        <!--                  groups="viseducat_core.group_vm_back_office_admin,viseducat_core.group_vm_back_office,viseducat_core.group_vm_faculty"-->
 
 
     </data>

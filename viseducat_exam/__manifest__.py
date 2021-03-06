@@ -24,7 +24,7 @@
 
     # always loaded
     'data': [
-        #'security/op_security.xml',
+        'security/vm_security.xml',
         'security/ir.model.access.csv',
         'views/res_partner_view.xml',
         'views/exam_attendees_view.xml',

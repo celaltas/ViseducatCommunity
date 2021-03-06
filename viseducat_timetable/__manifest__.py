@@ -20,10 +20,11 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'mail','viseducat_classroom'],
+    'depends': ['base', 'mail', 'viseducat_classroom'],
 
     # always loaded
     'data': [
+        'security/vm_security.xml',
         'security/ir.model.access.csv',
         'views/timetable_view.xml',
         'views/timetable_templates.xml',

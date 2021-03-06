@@ -24,8 +24,9 @@
 
     # always loaded
     'data': [
+        'security/vm_security.xml',
         'security/ir.model.access.csv',
-        'menus/vm_menu.xml',
+
         'data/media_queue_sequence.xml',
         'data/product_demo.xml',
         'views/publisher_view.xml',
@@ -46,6 +47,7 @@
         'report/report_library_card_barcode.xml',
         'report/report_media_barcode.xml',
         'report/report_student_library_card.xml',
+        'menus/vm_menu.xml',
 
     ],
     # only loaded in demonstration mode

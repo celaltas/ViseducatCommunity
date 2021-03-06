@@ -25,6 +25,7 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
+        'security/vm_security.xml',
         'views/attendance_register_view.xml',
         'views/attendance_line_view.xml',
         'views/attendance_sheet_view.xml',
