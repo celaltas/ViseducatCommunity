@@ -13,7 +13,7 @@
 
     # always loaded
     'data': [
-        # 'security/vm_security.xml',
+        'security/vm_security.xml',
         'security/ir.model.access.csv',
         'report/report_menu.xml',
         'report/fees_analysis_report_view.xml',

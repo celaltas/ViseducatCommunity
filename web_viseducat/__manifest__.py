@@ -2,7 +2,7 @@
     'name': "Web VisEduCat",
     'author': "VisMarin Bilisim",
     'website': "https://www.vismarin.com/en/",
-    'summary': 'Manage Timetable',
+    'summary': 'VisEduCat Website',
     'license': 'LGPL-3',
     'version': '13.0',
 

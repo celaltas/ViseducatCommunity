@@ -3,7 +3,7 @@
 <odoo>
     <template name="Event" id="event">
         <section class="pt64 pb64" id="event"
-                 style="background-image:url(&quot; /web_openeducat/static/src/img/bg-3.jpg &quot;)">
+                 style="background-image:url(&quot; /web_viseducat/static/src/img/bg-3.jpg &quot;)">
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-sm-12 col-md-12 col-lg-12 pb32">
@@ -21,7 +21,7 @@
                         <div class="single-event bg-white">
                             <div class="event-img">
                                 <a href="#" target="_blank">
-                                    <img src="/web_openeducat/static/src/img/event-1.jpg"
+                                    <img src="/web_viseducat/static/src/img/event-1.jpg"
                                          alt="event1"
                                          class="img-fluid"/>
                                 </a>
@@ -63,7 +63,7 @@
                             <div class="event-img">
                                 <a href="#" target="_blank">
 
-                                    <img src="/web_openeducat/static/src/img/event-2.jpg"
+                                    <img src="/web_viseducat/static/src/img/event-2.jpg"
                                          alt="event2"
                                          class="img-fluid"/>
                                 </a>
@@ -104,7 +104,7 @@
                             <div class="event-img">
                                 <a href="#" target="_blank">
 
-                                    <img src="/web_openeducat/static/src/img/event-3.jpg"
+                                    <img src="/web_viseducat/static/src/img/event-3.jpg"
                                          alt="event3"
                                          class="img-fluid"/>
                                 </a>
