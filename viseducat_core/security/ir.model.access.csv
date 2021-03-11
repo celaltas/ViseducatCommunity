@@ -1,6 +1,6 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_vm_student_student,op_student_student,model_vm_student,group_vm_back_office_admin,1,1,1,1
-access_vm_student_faculty,op_student_faculty,model_vm_student,group_vm_faculty,1,1,1,0
+access_vm_student_student,vm_student_student,model_vm_student,group_vm_back_office_admin,1,1,1,1
+access_vm_student_faculty,vm_student_faculty,model_vm_student,group_vm_faculty,1,1,1,0
 access_vm_student_back_office,name_vm_student_back_office,model_vm_student,group_vm_back_office,1,1,1,1
 access_vm_course_faculty,name_vm_course_faculty,model_vm_course,group_vm_faculty,1,1,1,0
 access_vm_course_back_office,name_vm_course_back_office,model_vm_course,group_vm_back_office,1,1,0,0
@@ -15,7 +15,7 @@ access_vm_res_country_faculty,name_vm_res_country_faculty,base.model_res_country
 access_vm_subject_faculty,name_vm_subject_faculty,model_vm_subject,group_vm_faculty,1,1,1,1
 access_vm_subject_back_office,name_vm_subject_back_office,model_vm_subject,group_vm_back_office,1,1,1,0
 access_vm_subject_back_office_admin,name_vm_subject_back_office_admin,model_vm_subject,group_vm_back_office_admin,1,1,1,1
-access_vm_faculty_faculty,op_faculty_faculty,model_vm_faculty,group_vm_faculty,1,0,0,0
+access_vm_faculty_faculty,vm_faculty_faculty,model_vm_faculty,group_vm_faculty,1,0,0,0
 access_vm_faculty_back_office,name_vm_faculty_back_office,model_vm_faculty,group_vm_back_office,1,1,1,0
 access_vm_faculty_back_office_admin,name_vm_faculty_back_office_admin,model_vm_faculty,group_vm_back_office_admin,1,1,1,1
 access_vm_category_faculty,name_vm_category_faculty,model_vm_category,group_vm_faculty,1,1,1,0
