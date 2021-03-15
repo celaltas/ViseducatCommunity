@@ -1,21 +1,28 @@
-# -*- coding: utf-8 -*-
-# from odoo import http
+from odoo import http
+from odoo.http import request
+from odoo.addons.portal.controllers.web import \
+    Home as home
 
 
-# class ViseducatCore(http.Controller):
-#     @http.route('/viseducat_core/viseducat_core/', auth='public')
-#     def index(self, **kw):
-#         return "Hello, world"
+class ViseducatHome(home):
 
-#     @http.route('/viseducat_core/viseducat_core/objects/', auth='public')
-#     def list(self, **kw):
-#         return http.request.render('viseducat_core.listing', {
-#             'root': '/viseducat_core/viseducat_core',
-#             'objects': http.request.env['viseducat_core.viseducat_core'].search([]),
-#         })
+    @http.route()
+    def web_login(self, redirect=None, *args, **kw):
+        response = super(ViseducatHome, self).web_login(
+            redirect=redirect, *args, **kw)
+        if not redirect and request.params['login_success']:
+            if request.env['res.users'].browse(request.uid).has_group(
+                    'base.group_user'):
+                redirect = b'/web?' + request.httprequest.query_string
+            else:
+                if request.env.user.is_parent:
+                    redirect = '/my/child'
+                else:
+                    redirect = '/my/home'
+            return http.redirect_with_hash(redirect)
+        return response
 
-#     @http.route('/viseducat_core/viseducat_core/objects/<model("viseducat_core.viseducat_core"):obj>/', auth='public')
-#     def object(self, obj, **kw):
-#         return http.request.render('viseducat_core.object', {
-#             'object': obj
-#         })
+    def _login_redirect(self, uid, redirect=None):
+        if request.env.user.is_parent:
+            return '/my/child'
+        return '/my/home'

@@ -10,7 +10,7 @@
 
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'board', 'hr', 'web', 'website'],
+    'depends': ['board', 'hr', 'web', 'website'],
 
     # always loaded
     'data': [
@@ -53,7 +53,7 @@
         'demo/subject_demo.xml',
         'demo/course_demo.xml',
         'demo/batch_demo.xml',
-        'demo/student_demo.xml',
+        'data/student_demo.xml',
         'demo/student_course_demo.xml',
         'demo/faculty_demo.xml',
         'demo/res_condig_fav_icon.xml',
@@ -70,4 +70,7 @@
     'images': [
         # 'static/description/viseducat_core_banner.jpg',
     ],
+    'installable': True,
+    'auto_install': False,
+    'application': True,
 }

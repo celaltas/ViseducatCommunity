@@ -2,9 +2,6 @@ from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 
 
-
-
-
 class VmStudentCourse(models.Model):
     _name = "vm.student.course"
     _description = "Student Course Details"
@@ -64,10 +61,9 @@ class VmStudent(models.Model):
     gr_no = fields.Char("GR Number", size=20)
     category_id = fields.Many2one('vm.category', 'Category')
     course_detail_ids = fields.One2many('vm.student.course', 'student_id',
-                                       'Course Details',
-                                     track_visibility='onchange')
+                                        'Course Details',
+                                        track_visibility='onchange')
     active = fields.Boolean(default=True)
-
 
     _sql_constraints = [(
         'unique_gr_no',
@@ -85,9 +81,16 @@ class VmStudent(models.Model):
     @api.constrains('birth_date')
     def _check_birthdate(self):
         for record in self:
-            if record.birth_date>fields.Date.today():
+            if record.birth_date > fields.Date.today():
                 raise ValidationError(_(
                     "Birth Date can't be greater than current date!"))
+
+    @api.model
+    def get_import_templates(self):
+        return [{
+            'label': _('Import Template for Students'),
+            'template': '/visducat_core/static/xls/vm_student.xls'
+        }]
 
     def create_student_user(self):
         user_group = self.env.ref("base.group_portal") or False
@@ -103,8 +106,3 @@ class VmStudent(models.Model):
                     'tz': self._context.get('tz'),
                 })
                 record.user_id = user_id
-
-
-
-
-
