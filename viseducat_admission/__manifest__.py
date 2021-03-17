@@ -27,10 +27,7 @@
         'demo/admission_register_demo.xml',
         'demo/admission_demo.xml',
     ],
-    'test': [],
-    'images': [
-        'static/description/viseducat_admission_banner.jpg',
-    ],
+
     'installable': True,
     'auto_install': False,
     'application': True,

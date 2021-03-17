@@ -26,3 +26,10 @@ class VmCourse(models.Model):
     _sql_constraints = [
         ('unique_course_code',
          'unique(code)', 'Code should be unique per course!')]
+
+    @api.model
+    def get_import_templates(self):
+        return [{
+            'label': _('Import Template for Courses'),
+            'template': '/viseducat_core/static/xls/vm_course.xls'
+        }]

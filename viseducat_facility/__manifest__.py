@@ -20,9 +20,10 @@
     ],
     # only loaded in demonstration mode
     'demo': [
-        'demo/facility_demo.xml'
+        'demo/facility_demo.xml',
     ],
-    'images': [
-        'static/description/viseducat_facility_banner.jpg',
-    ],
+    'installable': True,
+    'auto_install': False,
+    'application': True,
+
 }

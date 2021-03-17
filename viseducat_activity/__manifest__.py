@@ -27,7 +27,7 @@
     'demo': [
         'demo/activity_demo.xml',
     ],
-    'images': [
-        'static/description/viseducat_activity_banner.jpg',
-    ],
+    'installable': True,
+    'auto_install': False,
+    'application': True,
 }

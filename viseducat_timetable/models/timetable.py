@@ -109,8 +109,7 @@ class VmSession(models.Model):
             for val in course_val:
                 if val.student_id.user_id:
                     partner_ids.append(val.student_id.user_id.partner_id.id)
-            print("partner_ids",partner_ids)
-            print("partner_val",partner_val)
+
             subtype_id = self.env['mail.message.subtype'].sudo().search([
                 ('name', '=', 'Discussions')])
             if partner_ids and subtype_id:

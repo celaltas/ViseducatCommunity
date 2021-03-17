@@ -23,9 +23,7 @@
         'views/course_view.xml',
         'menu/vm_menu.xml',
     ],
-    'images': [
-        'static/description/viseducat_fees_banner.jpg',
-    ],
+
     'demo': [
         'demo/product_category_demo.xml',
         'demo/product_demo.xml',
@@ -35,4 +33,7 @@
         'demo/course_demo.xml',
         'demo/student_fees_details_demo.xml',
     ],
+    'installable': True,
+    'auto_install': False,
+    'application': True,
 }

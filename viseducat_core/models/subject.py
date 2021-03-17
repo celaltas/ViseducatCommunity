@@ -26,3 +26,10 @@ class VmSubject(models.Model):
         ('unique_subject_code',
          'unique(code)', 'Code should be unique per subject!'),
     ]
+
+    @api.model
+    def get_import_templates(self):
+        return [{
+            'label': _('Import Template for Subjects'),
+            'template': '/viseducat_core/static/xls/vm_subject.xls'
+        }]

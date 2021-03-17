@@ -16,7 +16,8 @@
         'views/snippets/event.xml',
         'views/snippets/newsfeed.xml',
         'views/snippets/footer.xml',
-        'views/image_library.xml'
+        'views/image_library.xml',
+
     ],
     'qweb': [
         "static/src/xml/base_inherit.xml",

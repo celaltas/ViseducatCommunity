@@ -40,3 +40,11 @@ class VmBatch(models.Model):
             return batches.name_get()
         return super(VmBatch, self).name_search(
             name, args, operator=operator, limit=limit)
+
+    @api.model
+    def get_import_templates(self):
+        return [{
+            'label': _('Import Template for Batch'),
+            'template': '/viseducat_core/static/xls/vm_batch.xls'
+        }]
+

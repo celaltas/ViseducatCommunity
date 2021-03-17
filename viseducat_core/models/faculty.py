@@ -76,3 +76,13 @@ class VmFaculty(models.Model):
             emp_id = self.env['hr.employee'].create(vals)
             record.write({'emp_id': emp_id.id})
             record.partner_id.write({'partner_share': True, 'employee': True})
+
+
+
+    @api.model
+    def get_import_templates(self):
+        return [{
+            'label': _('Import Template for Faculties'),
+            'template': '/viseducat_core/static/xls/vm_faculty.xls'
+        }]
+
