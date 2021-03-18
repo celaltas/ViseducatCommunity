@@ -29,7 +29,6 @@ class StudentMigrate(models.TransientModel):
 
     @api.onchange('course_from_id')
     def onchange_course_id(self):
-
         self.student_ids = False
 
     def student_migrate_forward(self):

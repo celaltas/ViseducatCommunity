@@ -9,7 +9,6 @@ class VmStudent(models.Model):
     activity_count = fields.Integer(compute='compute_count')
 
     def get_activity(self):
-        print("tıklandı")
         action = self.env.ref('viseducat_activity.act_open_vm_activity_view').read()[0]
         action['domain'] = [('student_id', 'in', self.ids)]
         return action
