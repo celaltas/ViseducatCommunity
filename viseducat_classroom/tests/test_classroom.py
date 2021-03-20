@@ -41,8 +41,8 @@ class TestAsset(TestClassroomCommon):
             'uom_po_id': self.env.ref('uom.product_uom_kgm').id,
             'description': 'FIFO Ice Cream',
         })
-        assets = self.op_asset.create({
-            'asset_id': self.env.ref('openeducat_classroom.op_classroom_1').id,
+        assets = self.vm_asset.create({
+            'asset_id': self.env.ref('viseducat_classroom.vm_classroom_1').id,
             'product_id': product.id,
             'code': 1,
             'product_uom_qty': 11

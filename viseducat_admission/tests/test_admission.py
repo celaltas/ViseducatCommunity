@@ -73,7 +73,7 @@ class TestAdmission(TestAdmissionCommon):
             admission.confirm_pending()
             admission.confirm_cancel()
             admission.confirm_to_draft()
-            admission.vis_student()
+            admission.open_student()
 
 
 class TestAdmissionregister(TestAdmissionCommon):
