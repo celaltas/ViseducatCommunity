@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="kanban_view_courses" model="ir.ui.view">
+            <field name="name">Course Kanban</field>
+            <field name="model">vm.course</field>
+            <field name="arch" type="xml">
+                <kanban create="true" class="oe_background_grey o_kanban_dashboard o_account_kanban" banner_route="/viseducat_core/viseducat_course_onboarding_panel">
+                    <field name="id"/>
+                    <field name="name"/>
+                    <field name="color"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="#{kanban_color(record.color.raw_value)}" style="width:306px;">
+                                <div t-attf-class="o_kanban_card_header">
+                                    <div class="o_kanban_card_header_title">
+                                        <div class="o_primary">
+                                            <a type="edit" class="mr-auto">
+                                                <field name="name"/>
+                                            </a>
+                                        </div>
+
+                                        <div class="o_secondary">
+                                            <a>
+                                                <field name="code"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="o_kanban_manage_button_section">
+                                        <a class="o_kanban_manage_toggle_button" href="#">
+                                            <i class="fa fa-ellipsis-v" role="img" aria-label="Manage" title="Manage"/>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="container o_kanban_card_content">
+                                    <div class="row col-md-12" style="padding: 0px; overflow: visible">
+                                        <div class="col-md-6">
+                                            <div name="first_column" class="col-md-12 o_kanban_primary_left">
+                                                <a name="student_count_compute" type="object"
+                                                   style="overflow: visible;">
+                                                    <field name="student_count"/>
+                                                    Students
+                                                </a>
+                                            </div>
+                                            <div name="forth_column" class="col-md-12 o_kanban_primary_left">
+                                            </div>
+
+                                            <div name="six_column" class="col-md-12 o_kanban_primary_left">
+                                                <a name="child_course_count_compute" type="object"
+                                                   style="overflow: visible;">
+                                                    <field name="child_course_count"/>
+                                                    Sub Course
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div name="third_column" class="col-md-12 o_kanban_primary_left">
+                                                <a name="subject_count_compute" type="object"
+                                                   style="overflow: visible;">
+                                                    <field name="subject_count"/>
+                                                    Subjects
+                                                </a>
+
+                                            </div>
+                                            <div name="second_column" class="col-md-12 o_kanban_primary_left">
+                                                <a name="batch_count_compute" type="object" style="overflow: visible;">
+                                                    <field name="batch_count"/>
+                                                    Batches
+                                                </a>
+                                            </div>
+                                            <div name="seven_column" class="col-md-12 o_kanban_primary_left">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div name="graph_section" class="o_kanban_graph_section"/>
+                                </div>
+                                <div class="container o_kanban_card_manage_pane dropdown-menu" role="menu">
+                                    <div class="row">
+                                        <div role="menuitem"
+                                             class="col-md-4 o_kanban_card_manage_section o_kanban_manage_view">
+                                            <div name="openeducat_views" class="o_kanban_card_manage_title">
+                                                <span>Views</span>
+                                            </div>
+                                        </div>
+                                        <div role="menuitem"
+                                             class="col-md-4 o_kanban_card_manage_section o_kanban_manage_new">
+                                            <div name="openeducat_new" class="o_kanban_card_manage_title">
+                                                <span>New</span>
+                                            </div>
+                                        </div>
+
+                                        <div role="menuitem"
+                                             class="col-md-4 o_kanban_card_manage_section o_kanban_manage_operations">
+                                            <div name="openeducat_reports" class="o_kanban_card_manage_title">
+                                                <span>Reports</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div t-if="widget.editable" class="o_kanban_card_manage_settings row">
+                                        <div role="menuitem" aria-haspopup="true" class="col-md-8">
+                                            <ul class="oe_kanban_colorpicker" data-field="color" role="menu"/>
+                                        </div>
+                                        <div class="col-md-4 text-right">
+                                            <a role="menuitem" type="edit">Settings</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+
+                </kanban>
+            </field>
+        </record>
+
+
+
+
+        <record id="view_vm_course_search" model="ir.ui.view">
+            <field name="name">vm.course.search</field>
+            <field name="model">vm.course</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Course">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="evaluation_type"/>
+                    <field name="parent_id"/>
+                    <field name="department_id"/>
+                    <newline/>
+                    <group expand="0" string="Group By...">
+                        <filter name="group_by_evaluation_type"
+                                string="Evaluation Type" domain="[]"
+                                context="{'group_by':'evaluation_type'}"/>
+                        <filter name="group_by_partner_course"
+                                string="Parent Course" domain="[]"
+                                context="{'group_by':'parent_id'}"/>
+                        <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window.view" id="act_open_vm_courses_view_kanban">
+            <field name="act_window_id" ref="act_open_vm_course_kanban"/>
+            <field name="sequence" eval="5"/>
+            <field name="view_mode">kanban</field>
+            <field name="view_id" ref="kanban_view_courses"/>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="act_open_vm_course_kanban">
+            <field name="name">Courses</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">vm.course</field>
+            <field name="view_mode">kanban</field>
+            <field name="search_view_id" ref="view_vm_course_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+    </data>
+</odoo>
