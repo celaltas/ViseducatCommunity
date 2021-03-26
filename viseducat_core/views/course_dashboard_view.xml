@@ -5,7 +5,8 @@
             <field name="name">Course Kanban</field>
             <field name="model">vm.course</field>
             <field name="arch" type="xml">
-                <kanban create="true" class="oe_background_grey o_kanban_dashboard o_account_kanban" banner_route="/viseducat_core/viseducat_course_onboarding_panel">
+                <kanban create="true" class="oe_background_grey o_kanban_dashboard o_account_kanban"
+                        banner_route="/viseducat_core/viseducat_course_onboarding_panel">
                     <field name="id"/>
                     <field name="name"/>
                     <field name="color"/>
@@ -74,47 +75,44 @@
                                     </div>
                                     <div name="graph_section" class="o_kanban_graph_section"/>
                                 </div>
-                                <div class="container o_kanban_card_manage_pane dropdown-menu" role="menu">
-                                    <div class="row">
-                                        <div role="menuitem"
-                                             class="col-md-4 o_kanban_card_manage_section o_kanban_manage_view">
-                                            <div name="openeducat_views" class="o_kanban_card_manage_title">
-                                                <span>Views</span>
-                                            </div>
-                                        </div>
-                                        <div role="menuitem"
-                                             class="col-md-4 o_kanban_card_manage_section o_kanban_manage_new">
-                                            <div name="openeducat_new" class="o_kanban_card_manage_title">
-                                                <span>New</span>
-                                            </div>
-                                        </div>
+<!--                                <div class="container o_kanban_card_manage_pane dropdown-menu" role="menu">-->
+<!--                                    <div class="row">-->
+<!--                                        <div role="menuitem"-->
+<!--                                             class="col-md-4 o_kanban_card_manage_section o_kanban_manage_view">-->
+<!--                                            <div name="openeducat_views" class="o_kanban_card_manage_title">-->
+<!--                                                <span>Views</span>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                        <div role="menuitem"-->
+<!--                                             class="col-md-4 o_kanban_card_manage_section o_kanban_manage_new">-->
+<!--                                            <div name="openeducat_new" class="o_kanban_card_manage_title">-->
+<!--                                                <span>New</span>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
 
-                                        <div role="menuitem"
-                                             class="col-md-4 o_kanban_card_manage_section o_kanban_manage_operations">
-                                            <div name="openeducat_reports" class="o_kanban_card_manage_title">
-                                                <span>Reports</span>
-                                            </div>
-                                        </div>
-                                    </div>
+<!--                                        <div role="menuitem"-->
+<!--                                             class="col-md-4 o_kanban_card_manage_section o_kanban_manage_operations">-->
+<!--                                            <div name="openeducat_reports" class="o_kanban_card_manage_title">-->
+<!--                                                <span>Reports</span>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
 
-                                    <div t-if="widget.editable" class="o_kanban_card_manage_settings row">
-                                        <div role="menuitem" aria-haspopup="true" class="col-md-8">
-                                            <ul class="oe_kanban_colorpicker" data-field="color" role="menu"/>
-                                        </div>
-                                        <div class="col-md-4 text-right">
-                                            <a role="menuitem" type="edit">Settings</a>
-                                        </div>
-                                    </div>
-                                </div>
+<!--                                    <div t-if="widget.editable" class="o_kanban_card_manage_settings row">-->
+<!--                                        <div role="menuitem" aria-haspopup="true" class="col-md-8">-->
+<!--                                            <ul class="oe_kanban_colorpicker" data-field="color" role="menu"/>-->
+<!--                                        </div>-->
+<!--                                        <div class="col-md-4 text-right">-->
+<!--                                            <a role="menuitem" type="edit">Settings</a>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
                             </div>
                         </t>
                     </templates>
-
                 </kanban>
             </field>
         </record>
-
-
 
 
         <record id="view_vm_course_search" model="ir.ui.view">
@@ -142,15 +140,6 @@
             </field>
         </record>
 
-
-        <record model="ir.actions.act_window.view" id="act_open_vm_courses_view_kanban">
-            <field name="act_window_id" ref="act_open_vm_course_kanban"/>
-            <field name="sequence" eval="5"/>
-            <field name="view_mode">kanban</field>
-            <field name="view_id" ref="kanban_view_courses"/>
-        </record>
-
-
         <record model="ir.actions.act_window" id="act_open_vm_course_kanban">
             <field name="name">Courses</field>
             <field name="type">ir.actions.act_window</field>
@@ -159,6 +148,13 @@
             <field name="search_view_id" ref="view_vm_course_search"/>
             <field name="domain">[]</field>
             <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_vm_courses_view_kanban">
+            <field name="act_window_id" ref="act_open_vm_course_kanban"/>
+            <field name="sequence" eval="5"/>
+            <field name="view_mode">kanban</field>
+            <field name="view_id" ref="kanban_view_courses"/>
         </record>
 
     </data>

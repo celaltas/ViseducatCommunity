@@ -28,6 +28,8 @@
         'views/hr_view.xml',
         'views/category_view.xml',
         'views/course_view.xml',
+        'views/course_dashboard_view.xml',
+        'views/course_onboarding_template.xml',
         'views/batch_view.xml',
         'views/subject_view.xml',
         'views/faculty_view.xml',
@@ -40,6 +42,7 @@
         'menu/viseducat_core_menu.xml',
         'menu/faculty_menu.xml',
         'menu/student_menu.xml',
+        'menu/course_menu.xml',
 
 
     ],
