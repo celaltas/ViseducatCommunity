@@ -98,6 +98,9 @@
                         <filter string="Exam" name="group_by_exam_name"
                                 domain="[]" context="{'group_by':'name'}"/>
                     </group>
+                    <searchpanel>
+                        <field name="subject_id" icon="fa-book"/>
+                    </searchpanel>
                 </search>
             </field>
         </record>

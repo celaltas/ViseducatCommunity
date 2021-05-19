@@ -25,6 +25,7 @@
         'wizard/time_table_report.xml',
         #'wizard/session_confirmation.xml',
         'views/timetable_templates.xml',
+        'views/batch_dashboard_view.xml',
         'menus/vm_menu.xml',
     ],
     # only loaded in demonstration mode

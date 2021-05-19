@@ -33,10 +33,18 @@
 
 
 
-        <menuitem id="menu_admission_analysis" name="Admission Report"
+        <menuitem id="menu_admission_report" name="Admission Report"
                   sequence="30"
                   parent="menu_admission_report_root"
-                  action="admission_analysis_act"/>
+                  action="admission_report_act"/>
+
+
+
+        <menuitem id="menu_admission_analysis" name="Admission Analysis"
+                  sequence="40"
+                  parent="menu_admission_report_root"
+                  action="open_admission_analysis_act"/>
+
 
     </data>
 </odoo>

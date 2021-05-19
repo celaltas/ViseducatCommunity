@@ -111,6 +111,8 @@ class VmCourse(models.Model):
         return action
 
 
+
+
     # courses onboarding panel methods
     @api.model
     def action_open_course_onboarding(self):
@@ -162,6 +164,7 @@ class VmCourse(models.Model):
     def action_close_course_onboarding(self):
         course = self.env['vm.course'].search([], limit=1, order="id desc")
         course.courses_onboarding_state = "closed"
+
 
     @api.model
     def get_import_templates(self):

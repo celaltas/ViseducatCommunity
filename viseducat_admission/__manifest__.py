@@ -17,6 +17,7 @@
         'data/admission_sequence.xml',
         'views/admission_register_view.xml',
         'views/admission_view.xml',
+        'views/admission_analysis_view.xml',
         'report/report_admission_analysis.xml',
         'report/report_menu.xml',
         'wizard/admission_analysis_wizard_view.xml',

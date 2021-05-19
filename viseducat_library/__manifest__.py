@@ -33,12 +33,18 @@
         'views/media_purchase_view.xml',
         'views/media_queue_view.xml',
         'views/library_view.xml',
+        'views/library_dashboard_view.xml',
         'views/author_view.xml',
         'views/publisher_view.xml',
         'views/tag_view.xml',
         'views/media_type_view.xml',
         'views/student_view.xml',
         'views/faculty_view.xml',
+        'views/library_media_analysis_view.xml',
+        'views/library_media_unit_analysis_view.xml',
+        'views/library_media_movement_analysis_view.xml',
+        'views/library_media_queue_analysis_view.xml',
+        'views/library_media_purchase_analysis_view.xml',
         'menus/vm_menu.xml',
 
     ],
@@ -57,6 +63,8 @@
         'demo/media_movement_demo.xml',
         'demo/media_purchase_demo.xml'
     ],
+
+
     'installable': True,
     'auto_install': False,
     'application': True,

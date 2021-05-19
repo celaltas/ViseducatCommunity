@@ -19,6 +19,8 @@
         'views/assignment_view.xml',
         'views/assignment_type_view.xml',
         'views/assignment_sub_line_view.xml',
+        'views/assignment_analysis_view.xml',
+        'views/assignment_submission_analysis_view.xml',
         'views/student_view.xml',
         'data/action_rule_data.xml',
         'menus/vm_menu.xml',

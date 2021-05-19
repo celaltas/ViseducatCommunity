@@ -2,15 +2,24 @@
 
 <odoo>
     <data>
-        <menuitem id="menu_vm_exam_root"
+
+         <menuitem id="menu_vm_school_exam_dashboard"
+                  name="Exam Dashboard"
+                  parent="menu_vm_exam_root"
+                  sequence="10"
+                  action="act_open_vm_exam_dashboard"/>
+
+
+         <menuitem id="menu_vm_exam_root"
                   name="Exams"
-                  sequence="-4"
+                  sequence="10"
                   web_icon="viseducat_exam,static/description/icon.png"/>
+
 
         <menuitem id="menu_vm_school_exam_result"
                   name="Exams"
                   parent="menu_vm_exam_root"
-                  sequence="10"/>
+                  sequence="20"/>
 
         <menuitem id="menu_vm_exam_main"
                   name="Exams"
@@ -74,7 +83,7 @@
         <menuitem id="menu_vm_exam_general"
                   name="General"
                   parent="menu_vm_exam_root"
-                  sequence="20"/>
+                  sequence="30"/>
 
         <menuitem id="menu_student_hall_ticket"
                   name="Student Hall Tickets"
@@ -86,7 +95,7 @@
 
         <menuitem id="menu_exam_configuration"
                   parent="menu_vm_exam_root"
-                  sequence="30"
+                  sequence="40"
                   name="Configuration"/>
 
         <menuitem id="menu_vm_exam_type_sub"
@@ -112,6 +121,7 @@
                   action="act_vis_vm_grade_configuration_view"
                   groups="viseducat_core.group_vm_back_office,viseducat_core.group_vm_back_office_admin,viseducat_core.group_vm_faculty"
         />
+
 
     </data>
 </odoo>

@@ -10,7 +10,7 @@
 
 
     # any module necessary for this one to work correctly
-    'depends': ['board', 'hr', 'web', 'website'],
+    'depends': ['board', 'hr', 'web', 'website','crm'],
 
     # always loaded
     'data': [
@@ -29,6 +29,7 @@
         'views/category_view.xml',
         'views/course_view.xml',
         'views/course_dashboard_view.xml',
+        'views/batch_dashboard_view.xml',
         'views/course_onboarding_template.xml',
         'views/batch_view.xml',
         'views/subject_view.xml',
@@ -43,6 +44,7 @@
         'menu/faculty_menu.xml',
         'menu/student_menu.xml',
         'menu/course_menu.xml',
+        'menu/batch_menu.xml',
 
 
     ],
