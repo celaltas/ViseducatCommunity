@@ -70,3 +70,20 @@ class VmExam(models.Model):
 
     def act_cancel(self):
         self.state = 'cancel'
+
+
+
+
+    def action_open_vm_exam_view(self):
+        action = self.env.ref('viseducat_exam.act_vis_vm_exam_view').read()[0]
+        return action
+
+    def action_open_completed_exam_view(self):
+        action = self.env.ref('viseducat_exam.act_vis_vm_exam_view').read()[0]
+        action['domain'] = [('end_time', '<', datetime.date.today())]
+
+        return  action
+
+    def action_open_exam_session_view(self):
+        action = self.env.ref('viseducat_exam.act_vis_vm_exam_session_view').read()[0]
+        return action

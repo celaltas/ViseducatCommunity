@@ -20,9 +20,12 @@
         'wizards/student_attendance_wizard_view.xml',
         'views/attendance_register_view.xml',
         'views/attendance_sheet_view.xml',
+        'views/attendance_sheet_analysis_view.xml',
+        'views/attendance_line_analysis_view.xml',
         'views/attendance_line_view.xml',
         'views/attendance_type_view.xml',
         'views/attendance_session_view.xml',
+        'views/batch_dashboard_view.xml',
         'report/student_attendance_report.xml',
         'report/report_menu.xml',
         'menus/vm_menu.xml'

@@ -65,6 +65,7 @@ class VmCourse(models.Model):
         # action['domain'] = [('student_id', 'in', self.ids)]
         return action
 
+
     # def get_and_update_course_dashboard_onboarding_state(self):
     #     return self.get_and_update_onbarding_state(
     #         'course_onboarding_course_layout_state',

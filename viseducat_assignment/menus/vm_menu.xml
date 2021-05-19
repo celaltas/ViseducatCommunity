@@ -39,5 +39,24 @@
                   groups="viseducat_core.group_vm_back_office_admin,viseducat_core.group_vm_faculty"
         />
 
+            <menuitem id="menu_vm_assignment_reporting" name="Reporting"
+                  parent="menu_vm_assignment_root" sequence="30"
+                  groups="viseducat_core.group_vm_faculty"
+        />
+
+        <menuitem id="menu_vm_assignment_analysis" name="Assignment Analysis"
+                  parent="menu_vm_assignment_reporting" sequence="10"
+                  action="act_open_vm_assignment_analysis_view"
+                  groups="viseducat_core.group_vm_back_office_admin,viseducat_core.group_vm_faculty"
+        />
+
+         <menuitem id="menu_vm_assignment_submission_analysis" name="Assignment Submission Analysis"
+                  parent="menu_vm_assignment_reporting" sequence="40"
+                  action="act_open_vm_assignment_submission_analysis_view"
+                  groups="viseducat_core.group_vm_back_office_admin,viseducat_core.group_vm_faculty"
+        />
+
+
+
     </data>
 </odoo>

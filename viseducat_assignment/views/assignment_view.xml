@@ -184,6 +184,9 @@
                         <filter string="Submission Date" domain="[]" name="group_by_assignment_submission"
                                 context="{'group_by':'submission_date'}"/>
                     </group>
+                       <searchpanel>
+                        <field name="subject_id" icon="fa-book"/>
+                    </searchpanel>
                 </search>
             </field>
         </record>

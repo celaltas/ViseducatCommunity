@@ -8,7 +8,6 @@
                   groups="viseducat_core.group_vm_back_office,viseducat_core.group_vm_faculty,viseducat_core.group_vm_back_office_admin"
         />
 
-
         <menuitem id="menu_vm_attendance"
                   name="Attendance"
                   parent="menu_vm_attendance_root"
@@ -52,6 +51,29 @@
                   action="act_vis_vm_attendance_type_view"
                   groups="viseducat_core.group_vm_back_office_admin,viseducat_core.group_vm_back_office,viseducat_core.group_vm_faculty"
         />
+
+
+        <menuitem id="menu_vm_attendance_reporting"
+                  parent="menu_vm_attendance_root"
+                  name="Reporting"
+                  sequence="50"/>
+
+        <menuitem id="menu_vm_attendance_attendance_sheet_analysis"
+                  name="Attendance Sheet Analysis"
+                  parent="menu_vm_attendance_reporting"
+                  sequence="10"
+                  action="act_open_attendance_sheet_analysis_view"
+                  groups="viseducat_core.group_vm_back_office_admin,viseducat_core.group_vm_back_office,viseducat_core.group_vm_faculty"
+        />
+
+          <menuitem id="menu_vm_attendance_attendance_line_analysis"
+                  name="Attendance Line Analysis"
+                  parent="menu_vm_attendance_reporting"
+                  sequence="20"
+                  action="act_open_attendance_line_analysis_view"
+                  groups="viseducat_core.group_vm_back_office_admin,viseducat_core.group_vm_back_office,viseducat_core.group_vm_faculty"
+        />
+
 
 
     </data>

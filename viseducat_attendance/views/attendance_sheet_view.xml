@@ -101,6 +101,9 @@
                         <filter string="Date" name="group_by_attendance_sheet_attendance_date"
                                 domain="[]" context="{'group_by':'attendance_date'}"/>
                     </group>
+                     <searchpanel>
+                        <field name="register_id" icon="fa-pencil-square-o"/>
+                    </searchpanel>
                 </search>
             </field>
         </record>

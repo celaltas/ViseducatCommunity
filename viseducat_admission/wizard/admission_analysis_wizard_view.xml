@@ -19,7 +19,7 @@
                 </form>
             </field>
         </record>
-        <record model="ir.actions.act_window" id="admission_analysis_act">
+        <record model="ir.actions.act_window" id="admission_report_act">
             <field name="name">Admission Analysis Report</field>
             <field name="res_model">admission.analysis</field>
             <field name="binding_view_types">form</field>

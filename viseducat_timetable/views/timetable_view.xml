@@ -119,6 +119,10 @@
                         <filter string="State" name="group_by_session_state"
                                 domain="[]" context="{'group_by':'state'}"/>
                     </group>
+                    <searchpanel>
+                        <field name="faculty_id" icon="fa-users"/>
+                        <field name="subject_id" icon="fa-book"/>
+                    </searchpanel>
                 </search>
             </field>
         </record>

@@ -1,7 +1,7 @@
-
 from dateutil.relativedelta import relativedelta
 from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
+import json
 
 
 class VmAdmissionRegister(models.Model):
@@ -41,6 +41,49 @@ class VmAdmissionRegister(models.Model):
          ('admission', 'Admission Process'), ('done', 'Done')],
         'Status', default='draft', track_visibility='onchange')
     active = fields.Boolean(default=True)
+    color = fields.Integer("Color Index", default=0)
+    admission_count = fields.Integer(compute='admission_count_compute', string='Number of Admissions')
+    kanban_admission_dashboard_graph = fields.Text(compute='_compute_dashboard_graph')
+
+    def admission_count_compute(self):
+        for record in self:
+            record.admission_count = self.env['vm.admission'].search_count(
+                [('register_id', '=', record.id)])
+
+    def action_view_applications(self):
+        action = self.env.ref('viseducat_admission.act_open_vm_admission_view').read()[0]
+        action['domain'] = [('register_id', '=', self.id)]
+        return action
+
+    def _compute_dashboard_graph(self):
+        for record in self:
+
+            record.kanban_admission_dashboard_graph = json.dumps(record._graph_data(record.id))
+
+    def _graph_data(self, record_id):
+        x_field = 'label'
+        y_field = 'value'
+        vals = self.read_application_number(record_id)
+        values = []
+        for key, value in vals.items():
+            temp_dict = {}
+            temp_dict[y_field] = value
+            temp_dict[x_field] = key.title()
+            values.append(temp_dict)
+            color = '#875A7B'
+        return [{'values': values, 'area': True, 'title': '', 'key': "Application", 'color': color}]
+
+
+    def read_application_number(self, record_id):
+        total_draft = self.env['vm.admission'].search_count([('state', '=', 'draft'), ('register_id', '=', record_id)])
+        total_done = self.env['vm.admission'].search_count([('state', '=', 'done'), ('register_id', '=', record_id)])
+        vals = {
+            'draft': total_draft,
+            'done': total_done,
+
+        }
+
+        return vals
 
     @api.constrains('start_date', 'end_date')
     def check_dates(self):
@@ -78,4 +121,3 @@ class VmAdmissionRegister(models.Model):
 
     def close_register(self):
         self.state = 'done'
-

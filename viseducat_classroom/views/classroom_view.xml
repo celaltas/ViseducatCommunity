@@ -72,6 +72,9 @@
                         <filter string="Capacity" name="group_by_classroom_capacity"
                                 domain="[]" context="{'group_by':'capacity'}"/>
                     </group>
+                    <searchpanel>
+                        <field name="course_id" icon="fa-book"/>
+                    </searchpanel>
                 </search>
             </field>
         </record>

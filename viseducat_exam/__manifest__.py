@@ -22,6 +22,7 @@
         'views/exam_room_view.xml',
         'views/exam_session_view.xml',
         'views/exam_type_view.xml',
+        'views/exam_dashboard_view.xml',
         'wizard/room_distribution_view.xml',
         'wizard/held_exam_view.xml',
         'views/exam_view.xml',
