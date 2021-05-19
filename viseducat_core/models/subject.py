@@ -27,6 +27,11 @@ class VmSubject(models.Model):
          'unique(code)', 'Code should be unique per subject!'),
     ]
 
+
+    def action_save_onboarding_subject_step(self):
+        course = self.env['vm.course'].search([], limit=1, order="id desc")
+        course.sudo().set_onboarding_step_done('course_onboarding_subject_layout_state')
+
     @api.model
     def get_import_templates(self):
         return [{

@@ -41,6 +41,11 @@ class VmBatch(models.Model):
         return super(VmBatch, self).name_search(
             name, args, operator=operator, limit=limit)
 
+
+    def action_save_onboarding_batch_step(self):
+        course =self.env['vm.course'].search([], limit=1, order="id desc")
+        course.sudo().set_onboarding_step_done('course_onboarding_batch_layout_state')
+
     @api.model
     def get_import_templates(self):
         return [{

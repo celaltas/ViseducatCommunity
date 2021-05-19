@@ -9,7 +9,7 @@
     'version': '13.0',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'mail', 'viseducat_core', 'viseducat_fees'],
+    'depends': ['viseducat_core', 'viseducat_fees'],
 
     # always loaded
     'data': [

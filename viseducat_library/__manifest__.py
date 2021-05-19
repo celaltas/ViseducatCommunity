@@ -26,7 +26,7 @@
         'report/report_menu.xml',
         'wizards/issue_media_view.xml',
         'wizards/return_media_view.xml',
-        #'wizards/reserve_media_view.xml',
+        # 'wizards/reserve_media_view.xml',
         'views/media_view.xml',
         'views/media_unit_view.xml',
         'views/media_movement_view.xml',
@@ -57,4 +57,8 @@
         'demo/media_movement_demo.xml',
         'demo/media_purchase_demo.xml'
     ],
+    'installable': True,
+    'auto_install': False,
+    'application': True,
+
 }
