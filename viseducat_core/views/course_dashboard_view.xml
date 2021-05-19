@@ -31,7 +31,7 @@
                                     <div class="row col-md-12" style="padding: 0px; overflow: visible">
                                         <div class="col-md-6">
                                             <div name="first_column" class="col-md-12 o_kanban_primary_left">
-                                                <a name="student_count_compute" type="object"
+                                                <a name="action_open_vm_student_view" type="object"
                                                    style="overflow: visible;">
                                                     <field name="student_count"/>
                                                     Students
@@ -41,16 +41,23 @@
                                             </div>
 
                                             <div name="six_column" class="col-md-12 o_kanban_primary_left">
-                                                <a name="child_course_count_compute" type="object"
+                                                <a name="action_open_vm_child_course_view" type="object"
                                                    style="overflow: visible;">
                                                     <field name="child_course_count"/>
                                                     Sub Course
                                                 </a>
                                             </div>
+                                             <div name="six_column" class="col-md-12 o_kanban_primary_left">
+                                                <a name="action_open_vm_admissiom_view" type="object"
+                                                   style="overflow: visible;">
+                                                    <field name="admission_count"/>
+                                                    Admission
+                                                </a>
+                                            </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div name="third_column" class="col-md-12 o_kanban_primary_left">
-                                                <a name="subject_count_compute" type="object"
+                                                <a name="action_open_vm_subject_view" type="object"
                                                    style="overflow: visible;">
                                                     <field name="subject_count"/>
                                                     Subjects
@@ -58,11 +65,20 @@
 
                                             </div>
                                             <div name="second_column" class="col-md-12 o_kanban_primary_left">
-                                                <a name="batch_count_compute" type="object" style="overflow: visible;">
+                                                <a name="action_open_vm_batch_view" type="object"
+                                                   style="overflow: visible;">
                                                     <field name="batch_count"/>
                                                     Batches
                                                 </a>
                                             </div>
+                                             <div name="second_column" class="col-md-12 o_kanban_primary_left">
+                                                <a name="action_open_vm_timetable_view" type="object"
+                                                   style="overflow: visible;">
+                                                    <field name="timetable_count"/>
+                                                    TimeTable
+                                                </a>
+                                            </div>
+
                                             <div name="seven_column" class="col-md-12 o_kanban_primary_left">
                                             </div>
                                         </div>

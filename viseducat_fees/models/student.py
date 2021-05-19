@@ -128,7 +128,7 @@ class VmStudentFeesDetails(models.Model):
         return value
 
 
-class OpStudent(models.Model):
+class VmStudent(models.Model):
     _inherit = "vm.student"
 
     fees_detail_ids = fields.One2many('vm.student.fees.details',

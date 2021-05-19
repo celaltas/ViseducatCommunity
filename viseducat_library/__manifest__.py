@@ -64,7 +64,9 @@
         'demo/media_purchase_demo.xml'
     ],
 
+
     'installable': True,
     'auto_install': False,
     'application': True,
+
 }

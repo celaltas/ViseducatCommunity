@@ -47,6 +47,7 @@ class VmBatch(models.Model):
         return super(VmBatch, self).name_search(
             name, args, operator=operator, limit=limit)
 
+
     def _compute_dashboard_graph(self):
         for record in self:
             record.dashboard_graph_data = json.dumps(record._graph_data(record.id))
@@ -98,6 +99,12 @@ class VmBatch(models.Model):
         action['domain'] = [('course_detail_ids.batch_id', '=', self.id)]
 
         return action
+
+
+    def action_save_onboarding_batch_step(self):
+        course =self.env['vm.course'].search([], limit=1, order="id desc")
+        course.sudo().set_onboarding_step_done('course_onboarding_batch_layout_state')
+
 
     @api.model
     def get_import_templates(self):

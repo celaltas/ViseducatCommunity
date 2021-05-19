@@ -9,7 +9,7 @@
     'version': '13.0',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','mail','viseducat_timetable'],
+    'depends': ['viseducat_timetable'],
 
     # always loaded
     'data': [
@@ -35,6 +35,7 @@
         'demo/attendance_register_demo.xml',
         'demo/attendance_sheet_demo.xml',
         'demo/attendance_line_demo.xml',
+
     ],
     'installable': True,
     'auto_install': False,
