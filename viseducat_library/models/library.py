@@ -21,6 +21,9 @@ class VmLibraryCardType(models.Model):
                 self.penalty_amt_per_day < 0.0:
             raise ValidationError(_('Enter proper value'))
 
+    def action_save_onboarding_card_type_step(self):
+        library = self.env['vm.media.type'].search([], limit=1, order="id desc")
+        library.sudo().set_onboarding_step_done('library_onboarding_card_type_layout_state')
 
 class VmLibraryCard(models.Model):
     _name = "vm.library.card"
@@ -71,3 +74,7 @@ class VmLibraryCard(models.Model):
             self.partner_id = self.student_id.partner_id
         if self.faculty_id:
             self.partner_id = self.faculty_id.partner_id
+
+    def action_save_onboarding_card_step(self):
+        library = self.env['vm.media.type'].search([], limit=1, order="id desc")
+        library.sudo().set_onboarding_step_done('library_onboarding_card_layout_state')

@@ -6,7 +6,8 @@
             <field name="name">Library Dashboard</field>
             <field name="model">vm.media.type</field>
             <field name="arch" type="xml">
-                <kanban create="false" class="oe_background_grey o_kanban_dashboard o_account_kanban">
+                <kanban create="false" class="oe_background_grey o_kanban_dashboard o_account_kanban"
+                        banner_route="/viseducat_library/viseducat_library_onboarding_panel">
                     <field name="id"/>
                     <field name="name"/>
                     <templates>

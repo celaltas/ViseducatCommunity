@@ -44,6 +44,9 @@ class VmAttendanceSheet(models.Model):
     ]
 
 
+    def action_save_onboarding_sheet_step(self):
+        attendance=self.env['vm.attendance.register'].search([],limit=1,order='id desc')
+        attendance.sudo().set_onboarding_step_done('attendance_onboarding_sheet_layout_state')
 
     @api.model
     def create(self, vals):

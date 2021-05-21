@@ -42,6 +42,10 @@ class VmAttendanceLine(models.Model):
          'Student must be unique per Attendance.'),
     ]
 
+    def action_save_onboarding_line_step(self):
+        attendance = self.env['vm.attendance.register'].search([], limit=1, order='id desc')
+        attendance.sudo().set_onboarding_step_done('attendance_onboarding_lines_layout_state')
+
     @api.onchange('attendance_type_id')
     def onchange_attendance_type(self):
         if self.attendance_type_id:

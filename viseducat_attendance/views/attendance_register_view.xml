@@ -6,7 +6,7 @@
             <field name="model">vm.attendance.register</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <tree string="Attendance Register">
+                <tree string="Attendance Register" banner_route="/viseducat_attendance/viseducat_attendance_onboarding_panel">
                     <field name="name"/>
                     <field name="code"/>
                     <field name="course_id"/>
@@ -25,7 +25,7 @@
                         <field name="active" invisible="1"/>
                         <widget name="web_ribbon" title="Archived" bg_color="bg-danger"
                                 attrs="{'invisible': [('active', '=', True)]}"/>
-                        <group col="4" colspan="4">
+                        <group name='attributes' col="4" colspan="4">
                             <field name="name"/>
                             <field name="code"/>
                             <field name="course_id"/>

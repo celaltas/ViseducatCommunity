@@ -20,7 +20,7 @@
             <field name="arch" type="xml">
                 <form string="Tag">
                     <sheet>
-                        <group>
+                        <group name="media_type">
                             <field name="name"/>
                             <field name="code"/>
                         </group>

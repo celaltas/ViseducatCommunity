@@ -23,7 +23,7 @@
             <field name="arch" type="xml">
                 <form string="Library Card Type">
                     <sheet>
-                        <group col="4">
+                        <group col="4" name="library_card_type">
                             <field name="name"/>
                             <field name="allow_media"/>
                             <field name="duration"/>
@@ -100,7 +100,7 @@
                         <field name="active" invisible="1"/>
                         <widget name="web_ribbon" title="Archived" bg_color="bg-danger"
                                 attrs="{'invisible': [('active', '=', True)]}"/>
-                        <group col="4">
+                        <group col="4" name='library_card'>
                             <field name="number"/>
                             <field name="issue_date"/>
                             <field name="library_card_type_id"/>

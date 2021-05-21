@@ -21,7 +21,7 @@
             <field name="arch" type="xml">
                 <form string="Publisher">
                     <sheet>
-                        <group col="4">
+                        <group col="4" name="publisher">
                             <field name="name"/>
                             <field name="address_id" context="{'show_address': 1}"
                                    options='{"always_reload": True}'/>

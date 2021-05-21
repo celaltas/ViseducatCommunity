@@ -49,5 +49,19 @@
                   groups="viseducat_core.group_vm_back_office_admin"/>
 
 
+
+        <menuitem id="menu_vm_reporting_root"
+                  name="Reporting"
+                  sequence="40"
+                  parent="menu_vm_timetable_root"
+                  groups="viseducat_core.group_vm_faculty,viseducat_core.group_vm_back_office,viseducat_core.group_vm_back_office_admin"
+        />
+
+         <menuitem id="menu_generate_time_table_report"
+                  string="Timetable Analysis"
+                  parent="menu_vm_reporting_root"
+                  sequence="10"
+                  action="act_open_time_table_analysis_view"
+                  groups="viseducat_core.group_vm_back_office_admin"/>
     </data>
 </odoo>

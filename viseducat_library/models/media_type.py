@@ -1,4 +1,4 @@
-from odoo import models, fields
+from odoo import models, fields, api, _
 from datetime import date
 import calendar
 import json
@@ -16,9 +16,99 @@ class VmMediaType(models.Model):
     due_media_month = fields.Integer('Due Course Books of Month', compute='compute_due_media_month')
     dashboard_graph_data = fields.Text(compute='_compute_dashboard_graph')
 
+    library_onboarding_state = fields.Selection(
+        [('not_done', "Not done"), ('just_done', "Just done"), ('done', "Done"), ('closed', "Closed")],
+        string="State of the library onboarding panel", default='not_done')
+
+    library_onboarding_card_layout_state=fields.Selection(
+        [('not_done', "Not done"), ('just_done', "Just done"), ('done', "Done")],
+        string="State of the library card onboarding panel", default='not_done')
+
+    library_onboarding_publisher_layout_state = fields.Selection(
+        [('not_done', "Not done"), ('just_done', "Just done"), ('done', "Done")],
+        string="State of the library publisher onboarding panel", default='not_done')
+    library_onboarding_author_layout_state = fields.Selection(
+        [('not_done', "Not done"), ('just_done', "Just done"), ('done', "Done")],
+        string="State of the library author onboarding panel", default='not_done')
+    library_onboarding_media_type_layout_state = fields.Selection(
+        [('not_done', "Not done"), ('just_done', "Just done"), ('done', "Done")],
+        string="State of the library media type onboarding panel", default='not_done')
+    library_onboarding_card_type_layout_state = fields.Selection(
+        [('not_done', "Not done"), ('just_done', "Just done"), ('done', "Done")],
+        string="State of the library card type onboarding panel", default='not_done')
+
+
     _sql_constraints = [
         ('unique_media_type_code',
          'unique(code)', 'Code should be unique per media type!')]
+
+    # Onboarding Methods
+    @api.model
+    def action_open_library_card_onboarding(self):
+        action = self.env.ref('viseducat_library.action_open_library_onboarding_card_step').read()[0]
+        return action
+
+    @api.model
+    def action_open_library_publisher_onboarding(self):
+        action = self.env.ref('viseducat_library.action_open_library_onboarding_publisher_step').read()[0]
+        return action
+
+    @api.model
+    def action_open_library_author_onboarding(self):
+        action = self.env.ref('viseducat_library.action_open_library_onboarding_author_step').read()[0]
+        return action
+
+    @api.model
+    def action_open_library_media_type_onboarding(self):
+        action = self.env.ref('viseducat_library.action_open_library_onboarding_media_type_step').read()[0]
+        return action
+
+    @api.model
+    def action_open_library_card_type_onboarding(self):
+        action = self.env.ref('viseducat_library.action_open_library_onboarding_card_type_step').read()[0]
+        return action
+
+
+    def get_and_update_library_dashboard_onboarding_state(self):
+        steps = [
+            'library_onboarding_card_layout_state',
+            'library_onboarding_publisher_layout_state',
+            'library_onboarding_author_layout_state',
+            'library_onboarding_media_type_layout_state',
+            'library_onboarding_card_type_layout_state',
+
+        ]
+        return self.get_and_update_onbarding_state('library_onboarding_state', steps)
+
+    def set_onboarding_step_done(self, step_name):
+        if self[step_name] == 'not_done':
+            self[step_name] = 'just_done'
+
+    def get_and_update_onbarding_state(self, onboarding_state, steps_states):
+        old_values = {}
+        all_done = True
+        for step_state in steps_states:
+            old_values[step_state] = self[step_state]
+            if self[step_state] == 'just_done':
+                self[step_state] = 'done'
+            all_done = all_done and self[step_state] == 'done'
+        if all_done:
+            if self[onboarding_state] == 'not_done':
+                old_values['onboarding_state'] = 'just_done'
+            else:
+                old_values['onboarding_state'] = 'done'
+            self[onboarding_state] = 'done'
+        return old_values
+
+    def action_save_onboarding_media_type_step(self):
+        self.set_onboarding_step_done('library_onboarding_media_type_layout_state')
+
+
+
+    @api.model
+    def action_close_library_onboarding(self):
+        library = self.env['vm.media.type'].search([], limit=1, order="id desc")
+        library.library_onboarding_state = "closed"
 
     def compute_issued_media(self):
         for record in self:

@@ -45,6 +45,7 @@
         'views/library_media_movement_analysis_view.xml',
         'views/library_media_queue_analysis_view.xml',
         'views/library_media_purchase_analysis_view.xml',
+        'views/library_onboarding_template.xml',
         'menus/vm_menu.xml',
 
     ],

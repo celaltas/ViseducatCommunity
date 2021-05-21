@@ -30,7 +30,7 @@
                         <field name="active" invisible="1"/>
                         <widget name="web_ribbon" title="Archived" bg_color="bg-danger"
                                 attrs="{'invisible': [('active', '=', True)]}"/>
-                        <group col="4" colspan="4">
+                        <group name='lines' col="4" colspan="4">
                             <field name="attendance_id" widget="selection"/>
                             <field name="student_id"
                                    domain="[('course_detail_ids.course_id','=',course_id),('course_detail_ids.batch_id','=',batch_id)]"/>
