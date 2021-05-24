@@ -86,7 +86,7 @@ class VmBatch(models.Model):
             temp_dict[y_field] = present
             temp_dict[x_field] = day
             values.append(temp_dict)
-            print(values)
+
         return [{'values': values, 'area': True, 'title': '', 'key': "Attendance", 'color': '#7c7bad'}]
 
     def student_count_compute(self):
