@@ -3,17 +3,17 @@
 <odoo>
     <data>
 
-         <menuitem id="menu_vm_school_exam_dashboard"
+
+        <menuitem id="menu_vm_exam_root"
+                  name="Exams"
+                  sequence="10"
+                  web_icon="viseducat_exam,static/description/icon.png"/>
+
+        <menuitem id="menu_vm_school_exam_dashboard"
                   name="Exam Dashboard"
                   parent="menu_vm_exam_root"
                   sequence="10"
                   action="act_open_vm_exam_dashboard"/>
-
-
-         <menuitem id="menu_vm_exam_root"
-                  name="Exams"
-                  sequence="10"
-                  web_icon="viseducat_exam,static/description/icon.png"/>
 
 
         <menuitem id="menu_vm_school_exam_result"

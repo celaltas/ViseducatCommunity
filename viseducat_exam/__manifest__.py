@@ -14,7 +14,6 @@
     # always loaded
     'data': [
 
-
         'security/vm_security.xml',
         'security/ir.model.access.csv',
         'views/res_partner_view.xml',
@@ -22,7 +21,6 @@
         'views/exam_room_view.xml',
         'views/exam_session_view.xml',
         'views/exam_type_view.xml',
-        'views/exam_dashboard_view.xml',
         'wizard/room_distribution_view.xml',
         'wizard/held_exam_view.xml',
         'views/exam_view.xml',
@@ -35,7 +33,9 @@
         'report/student_marksheet.xml',
         'report/report_menu.xml',
         'wizard/student_hall_tickets_wizard_view.xml',
+        'views/exam_dashboard_view.xml',
         'menus/vm_menu.xml',
+
     ],
     # only loaded in demonstration mode
     'demo': [
