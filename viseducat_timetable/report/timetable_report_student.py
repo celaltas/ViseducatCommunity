@@ -46,7 +46,6 @@ class ReportTimetableStudentGenerate(models.AbstractModel):
         return dayofWeek
 
     def get_object(self, data):
-        print("getobject",data)
         data_list = []
         for timetable_obj in self.env['vm.session'].browse(
                 data['time_table_ids']):
@@ -65,7 +64,6 @@ class ReportTimetableStudentGenerate(models.AbstractModel):
             data_list.append(timetable_data)
         ttdl = sorted(data_list, key=lambda k: k['sequence'])
         final_list = self.sort_tt(ttdl)
-        print("final_list",final_list)
         return final_list
 
     @api.model

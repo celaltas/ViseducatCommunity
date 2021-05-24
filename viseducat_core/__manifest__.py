@@ -36,7 +36,6 @@
         # 'views/res_config_setting_view.xml',
         'views/student_portal_view.xml',
         'views/student_course_view.xml',
-        # 'data/ir_cron_data.xml',
         'views/course_dashboard_view.xml',
         'views/batch_dashboard_view.xml',
         'views/course_onboarding_template.xml',
