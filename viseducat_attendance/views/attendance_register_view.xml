@@ -6,7 +6,7 @@
             <field name="model">vm.attendance.register</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <tree string="Attendance Register" banner_route="/viseducat_attendance/viseducat_attendance_onboarding_panel">
+               <tree string="Attendance Register" > <!-- banner_route="/viseducat_attendance/viseducat_attendance_onboarding_panel"-->
                     <field name="name"/>
                     <field name="code"/>
                     <field name="course_id"/>
